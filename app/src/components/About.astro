@@ -1,0 +1,156 @@
+---
+import { Badge } from "@/components/ui/badge";
+---
+
+<section id="about" class="py-32 relative overflow-hidden">
+  <!-- Decorative elements -->
+  <div
+    class="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-orange-500/5 blur-3xl parallax"
+    data-speed="15"
+  >
+  </div>
+
+  <!-- Decorative grid -->
+  <div
+    class="absolute inset-0 grid grid-cols-6 grid-rows-6 pointer-events-none"
+  >
+    {
+      Array(36)
+        .fill(0)
+        .map((_, i) => <div class="border-[0.5px] border-white/[0.02]" />)
+    }
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="reveal">
+          <div class="relative">
+            <!-- Profile image container with creative border -->
+            <div
+              class="aspect-square bg-gradient-to-br from-[#1A1A1F] to-[#0A0A0C] rounded-2xl p-1 border border-white/5 relative overflow-hidden"
+            >
+              <!-- Animated gradient border -->
+              <div
+                class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
+              >
+              </div>
+
+              <!-- Inner content -->
+              <div
+                class="w-full h-full bg-[#0A0A0C] rounded-2xl flex items-center justify-center relative overflow-hidden"
+              >
+                <!-- Decorative elements -->
+                <div
+                  class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full transform translate-x-1/2 -translate-y-1/2 blur-2xl"
+                >
+                </div>
+                <div
+                  class="absolute bottom-0 left-0 w-40 h-40 bg-orange-500/10 rounded-full transform -translate-x-1/2 translate-y-1/2 blur-2xl"
+                >
+                </div>
+
+                <!-- Profile image or placeholder -->
+                <div
+                  class="relative z-10 w-full h-full flex items-center justify-center"
+                >
+                  <div
+                    class="w-40 h-40 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white text-5xl font-bold"
+                  >
+                    AC
+                  </div>
+                </div>
+
+                <!-- Experience badge -->
+                <div
+                  class="absolute bottom-8 right-8 glass rounded-full px-4 py-2 text-sm font-medium"
+                >
+                  <span class="gradient-text">5+ Years Experience</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating badges -->
+            <div
+              class="absolute -top-6 -left-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
+            >
+              <span class="gradient-text">React Native Expert</span>
+            </div>
+
+            <div
+              class="absolute -bottom-6 -right-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
+            >
+              <span class="gradient-text">UI/UX Enthusiast</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="reveal reveal-delay-1">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+            <div
+              class="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mb-8"
+            >
+            </div>
+          </div>
+
+          <div class="space-y-6 reveal reveal-delay-2">
+            <p class="text-lg leading-relaxed">
+              With over <span class="text-white font-medium"
+                >5 years of experience</span
+              > in mobile development, I specialize in creating high-performance
+              applications that deliver exceptional user experiences across iOS and
+              Android platforms.
+            </p>
+
+            <p class="text-lg leading-relaxed">
+              I'm passionate about <span class="text-white font-medium"
+                >clean code</span
+              >, modern design patterns, and staying at the forefront of mobile
+              technology trends. My approach combines technical expertise with a
+              deep understanding of user behavior.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-3">
+            <h3 class="text-xl font-semibold mb-4">Core Technologies</h3>
+            <div class="flex flex-wrap gap-3">
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >React Native</Badge
+              >
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >Flutter</Badge
+              >
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >iOS Development</Badge
+              >
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >Android Development</Badge
+              >
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >UI/UX Design</Badge
+              >
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >TypeScript</Badge
+              >
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >Swift</Badge
+              >
+              <Badge
+                class="bg-white/5 hover:bg-white/10 text-white border-none py-2 px-4"
+                >Kotlin</Badge
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

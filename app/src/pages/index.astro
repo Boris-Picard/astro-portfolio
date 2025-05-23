@@ -1,27 +1,105 @@
 ---
-import "../styles/global.css";
-// Component Imports
-import { Button } from "@/components/ui/button";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro + TailwindCSS</title>
-  </head>
+<Layout title="Alex Chen - Mobile App Developer">
+  <div class="noise-overlay"></div>
+  <div class="grain-overlay"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
-  <body>
-    <div class="grid place-items-center h-screen content-center">
-      <Button>Tailwind Button in Astro!</Button>
-      <a href="/markdown-page" class="p-4 underline"
-        >Markdown is also supported...</a
-      >
-    </div>
-  </body>
-</html>
+  <Navbar />
+  <main class="pt-16 md:pt-20">
+    <Hero class="reveal parallax" data-speed="10" />
+    <About class="reveal parallax" data-speed="15" />
+    <Skills class="reveal parallax" data-speed="20" />
+    <Projects class="reveal parallax" data-speed="25" />
+    <Contact class="reveal parallax" data-speed="30" />
+    <Footer class="reveal parallax" data-speed="35" />
+  </main>
+
+  <script>
+    // Custom cursor
+    document.addEventListener("DOMContentLoaded", () => {
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
+
+      window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        if (cursorDot) {
+          (cursorDot as HTMLElement).style.left = `${posX}px`;
+          (cursorDot as HTMLElement).style.top = `${posY}px`;
+        }
+
+        if (cursorOutline) {
+          (cursorOutline as HTMLElement).animate(
+            {
+              left: `${posX}px`,
+              top: `${posY}px`,
+            },
+            { duration: 500, fill: "forwards" }
+          );
+        }
+      });
+
+      // Add hover class to cursor when hovering over links and buttons
+      const hoverElements = document.querySelectorAll(
+        "a, button, .hover-trigger"
+      );
+      hoverElements.forEach((element) => {
+        element.addEventListener("mouseenter", () => {
+          cursorDot?.classList.add("cursor-hover");
+          cursorOutline?.classList.add("cursor-hover");
+        });
+
+        element.addEventListener("mouseleave", () => {
+          cursorDot?.classList.remove("cursor-hover");
+          cursorOutline?.classList.remove("cursor-hover");
+        });
+      });
+    });
+
+    // Parallax effect for decorative elements
+    document.addEventListener("mousemove", (e) => {
+      const parallaxElements = document.querySelectorAll(".parallax");
+      const mouseX = e.clientX / window.innerWidth - 0.5;
+      const mouseY = e.clientY / window.innerHeight - 0.5;
+
+      parallaxElements.forEach((el) => {
+        const speed = el.getAttribute("data-speed") || 20;
+        const x = mouseX * parseInt(speed);
+        const y = mouseY * parseInt(speed);
+        (el as HTMLElement).style.transform = `translate(${x}px, ${y}px)`;
+      });
+    });
+
+    // Reveal animations on scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".reveal").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</Layout>

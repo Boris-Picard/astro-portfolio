@@ -1,0 +1,331 @@
+---
+import { Progress } from "@/components/ui/progress";
+---
+
+<section id="skills" class="py-32 relative overflow-hidden bg-[#0D0D10]">
+  <!-- Decorative elements -->
+  <div
+    class="absolute top-1/4 right-1/3 w-96 h-96 rounded-full bg-orange-500/5 blur-3xl parallax"
+    data-speed="10"
+  >
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-20 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Skills & Expertise</h2>
+        <div
+          class="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto mb-8"
+        >
+        </div>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Technologies and tools I use to bring ideas to life
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Skill Card 1 -->
+        <div
+          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-1"
+        >
+          <div
+            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
+          >
+          </div>
+          <div class="bg-[#0D0D10] rounded-2xl p-6 relative z-10 h-full">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold"
+              >
+                RN
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">React Native</h3>
+                <p class="text-sm text-muted-foreground">
+                  Cross-platform development
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Component Architecture</span>
+                  <span>95%</span>
+                </div>
+                <Progress value={95} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>State Management</span>
+                  <span>90%</span>
+                </div>
+                <Progress value={90} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Native Modules</span>
+                  <span>85%</span>
+                </div>
+                <Progress value={85} className="h-1.5 bg-white/5" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Card 2 -->
+        <div
+          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-2"
+        >
+          <div
+            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
+          >
+          </div>
+          <div class="bg-[#0D0D10] rounded-2xl p-6 relative z-10 h-full">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold"
+              >
+                FL
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Flutter</h3>
+                <p class="text-sm text-muted-foreground">
+                  Dart-based framework
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Widget Development</span>
+                  <span>88%</span>
+                </div>
+                <Progress value={88} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>State Management</span>
+                  <span>85%</span>
+                </div>
+                <Progress value={85} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Platform Integration</span>
+                  <span>80%</span>
+                </div>
+                <Progress value={80} className="h-1.5 bg-white/5" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Card 3 -->
+        <div
+          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-3"
+        >
+          <div
+            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
+          >
+          </div>
+          <div class="bg-[#0D0D10] rounded-2xl p-6 relative z-10 h-full">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center text-white font-bold"
+              >
+                iOS
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">iOS Development</h3>
+                <p class="text-sm text-muted-foreground">Swift & SwiftUI</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Swift Programming</span>
+                  <span>92%</span>
+                </div>
+                <Progress value={92} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>SwiftUI</span>
+                  <span>88%</span>
+                </div>
+                <Progress value={88} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>App Store Deployment</span>
+                  <span>95%</span>
+                </div>
+                <Progress value={95} className="h-1.5 bg-white/5" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Card 4 -->
+        <div
+          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-1"
+        >
+          <div
+            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
+          >
+          </div>
+          <div class="bg-[#0D0D10] rounded-2xl p-6 relative z-10 h-full">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center text-white font-bold"
+              >
+                AND
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Android Development</h3>
+                <p class="text-sm text-muted-foreground">
+                  Kotlin & Jetpack Compose
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Kotlin Programming</span>
+                  <span>90%</span>
+                </div>
+                <Progress value={90} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Jetpack Compose</span>
+                  <span>85%</span>
+                </div>
+                <Progress value={85} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Play Store Deployment</span>
+                  <span>92%</span>
+                </div>
+                <Progress value={92} className="h-1.5 bg-white/5" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Card 5 -->
+        <div
+          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-2"
+        >
+          <div
+            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
+          >
+          </div>
+          <div class="bg-[#0D0D10] rounded-2xl p-6 relative z-10 h-full">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-white font-bold"
+              >
+                UX
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">UI/UX Design</h3>
+                <p class="text-sm text-muted-foreground">
+                  Figma & Design Systems
+                </p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Wireframing</span>
+                  <span>85%</span>
+                </div>
+                <Progress value={85} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Prototyping</span>
+                  <span>80%</span>
+                </div>
+                <Progress value={80} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Design Systems</span>
+                  <span>75%</span>
+                </div>
+                <Progress value={75} className="h-1.5 bg-white/5" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skill Card 6 -->
+        <div
+          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-3"
+        >
+          <div
+            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
+          >
+          </div>
+          <div class="bg-[#0D0D10] rounded-2xl p-6 relative z-10 h-full">
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-white font-bold"
+              >
+                API
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold">Backend Integration</h3>
+                <p class="text-sm text-muted-foreground">REST APIs & GraphQL</p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>RESTful APIs</span>
+                  <span>90%</span>
+                </div>
+                <Progress value={90} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>GraphQL</span>
+                  <span>85%</span>
+                </div>
+                <Progress value={85} className="h-1.5 bg-white/5" />
+              </div>
+
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span>Authentication</span>
+                  <span>88%</span>
+                </div>
+                <Progress value={88} className="h-1.5 bg-white/5" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

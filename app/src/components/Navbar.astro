@@ -1,0 +1,197 @@
+---
+import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="container mx-auto px-4">
+    <nav class="flex items-center justify-between h-20 md:h-24">
+      <!-- Logo -->
+      <a href="#" class="text-xl font-bold relative group hover-trigger">
+        <span class="gradient-text text-2xl">AC</span>
+        <span
+          class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-orange-600 transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-2">
+        <a
+          href="#hero"
+          class="nav-link px-4 py-2 text-sm font-medium relative hover-trigger"
+        >
+          <span>Home</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a
+          href="#about"
+          class="nav-link px-4 py-2 text-sm font-medium relative hover-trigger"
+        >
+          <span>About</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a
+          href="#skills"
+          class="nav-link px-4 py-2 text-sm font-medium relative hover-trigger"
+        >
+          <span>Skills</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a
+          href="#projects"
+          class="nav-link px-4 py-2 text-sm font-medium relative hover-trigger"
+        >
+          <span>Projects</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <a
+          href="#contact"
+          class="nav-link px-4 py-2 text-sm font-medium relative hover-trigger"
+        >
+          <span>Contact</span>
+          <span class="nav-indicator"></span>
+        </a>
+        <Button
+          size="sm"
+          class="ml-2 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 border-none hover-trigger"
+        >
+          Download CV
+        </Button>
+      </div>
+
+      <!-- Mobile Navigation Button -->
+      <Button
+        variant="ghost"
+        size="icon"
+        id="mobile-menu-button"
+        class="md:hidden hover-trigger"
+      >
+        <Menu class="h-5 w-5" />
+        <span class="sr-only">Open menu</span>
+      </Button>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden glass fixed inset-0 z-50 flex flex-col justify-center items-center"
+  >
+    <Button
+      variant="ghost"
+      size="icon"
+      id="mobile-menu-close"
+      class="absolute top-6 right-6 hover-trigger"
+    >
+      <X class="h-5 w-5" />
+      <span class="sr-only">Close menu</span>
+    </Button>
+
+    <div class="flex flex-col items-center space-y-6 text-center">
+      <a
+        href="#hero"
+        class="text-2xl font-medium hover:text-orange-500 transition-colors hover-trigger"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="text-2xl font-medium hover:text-orange-500 transition-colors hover-trigger"
+        >About</a
+      >
+      <a
+        href="#skills"
+        class="text-2xl font-medium hover:text-orange-500 transition-colors hover-trigger"
+        >Skills</a
+      >
+      <a
+        href="#projects"
+        class="text-2xl font-medium hover:text-orange-500 transition-colors hover-trigger"
+        >Projects</a
+      >
+      <a
+        href="#contact"
+        class="text-2xl font-medium hover:text-orange-500 transition-colors hover-trigger"
+        >Contact</a
+      >
+      <Button
+        class="mt-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 border-none hover-trigger"
+      >
+        Download CV
+      </Button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-link .nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 3px;
+    width: 0;
+    background: linear-gradient(
+      to right,
+      var(--orange-primary),
+      var(--orange-secondary)
+    );
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover .nav-indicator {
+    width: 20px;
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenuClose = document.getElementById("mobile-menu-close");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuButton && mobileMenu && mobileMenuClose) {
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    });
+
+    mobileMenuClose.addEventListener("click", () => {
+      mobileMenu.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    });
+
+    // Close menu when clicking on a link
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        document.body.style.overflow = "auto";
+      });
+    });
+  }
+
+  // Active link indicator
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  function highlightNavLink() {
+    const scrollY = window.scrollY;
+
+    sections.forEach((section) => {
+      const sectionHeight = section.offsetHeight;
+      const sectionTop = section.offsetTop - 100;
+      const sectionId = section.getAttribute("id");
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${sectionId}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener("scroll", highlightNavLink);
+</script>
