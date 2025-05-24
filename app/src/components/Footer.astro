@@ -1,82 +1,123 @@
 ---
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
 ---
 
-<footer class="py-16 relative overflow-hidden border-t border-white/5">
+<footer class="py-16 relative overflow-hidden border-t border-border/20">
+  <!-- Enhanced gradient background -->
+  <div
+    class="absolute inset-0 bg-gradient-to-t from-orange-500/5 via-transparent to-transparent"
+  >
+  </div>
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-purple-500/3 via-transparent to-blue-500/3"
+  >
+  </div>
   <div class="container mx-auto px-4 relative z-10">
     <div class="max-w-6xl mx-auto">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-        <!-- Logo and Copyright -->
-        <div class="text-center md:text-left">
-          <div class="text-2xl font-bold gradient-text mb-2">Alex Chen</div>
-          <p class="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Alex Chen. All rights reserved.
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <!-- Brand & Description -->
+        <div class="md:col-span-1">
+          <div class="text-2xl font-bold mb-4">
+            <span
+              class="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent"
+            >
+              Alex Chen
+            </span>
+          </div>
+          <p class="text-muted-foreground text-sm leading-relaxed mb-6">
+            Mobile application developer passionate about creating exceptional
+            user experiences. Let's build something amazing together.
           </p>
+          <div class="flex items-center gap-2 text-sm text-muted-foreground">
+            <span>Made with</span>
+            <Heart class="w-4 h-4 text-orange-500 fill-current" />
+            <span>in San Francisco</span>
+          </div>
         </div>
 
-        <!-- Navigation Links -->
-        <div class="hidden md:flex items-center space-x-6">
-          <a
-            href="#hero"
-            class="text-sm text-muted-foreground hover:text-white transition-colors hover-trigger"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="text-sm text-muted-foreground hover:text-white transition-colors hover-trigger"
-            >About</a
-          >
-          <a
-            href="#skills"
-            class="text-sm text-muted-foreground hover:text-white transition-colors hover-trigger"
-            >Skills</a
-          >
-          <a
-            href="#projects"
-            class="text-sm text-muted-foreground hover:text-white transition-colors hover-trigger"
-            >Projects</a
-          >
-          <a
-            href="#contact"
-            class="text-sm text-muted-foreground hover:text-white transition-colors hover-trigger"
-            >Contact</a
-          >
+        <!-- Quick Links -->
+        <div class="md:col-span-1">
+          <h3 class="font-semibold experience-title mb-4">Quick Links</h3>
+          <div class="space-y-3">
+            <a
+              href="#projects"
+              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+            >
+              Featured Projects
+            </a>
+            <a
+              href="#contact"
+              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+            >
+              Get In Touch
+            </a>
+            <a
+              href="mailto:alex@example.com"
+              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+            >
+              Work Together
+            </a>
+            <a
+              href="/blog"
+              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+            >
+              Blog & Insights
+            </a>
+          </div>
         </div>
 
-        <!-- Social Links -->
-        <div class="flex justify-center gap-6">
-          <a
-            href="https://github.com"
-            class="text-muted-foreground hover:text-orange-500 transition-colors hover-trigger"
-            aria-label="GitHub Profile"
-          >
-            <Github class="w-5 h-5" />
-          </a>
-          <a
-            href="https://linkedin.com"
-            class="text-muted-foreground hover:text-orange-500 transition-colors hover-trigger"
-            aria-label="LinkedIn Profile"
-          >
-            <Linkedin class="w-5 h-5" />
-          </a>
-          <a
-            href="mailto:alex@example.com"
-            class="text-muted-foreground hover:text-orange-500 transition-colors hover-trigger"
-            aria-label="Email Contact"
-          >
-            <Mail class="w-5 h-5" />
-          </a>
+        <!-- Contact & Social -->
+        <div class="md:col-span-1">
+          <h3 class="font-semibold experience-title mb-4">Connect</h3>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <Mail class="w-4 h-4 text-orange-500" />
+              <a
+                href="mailto:alex@example.com"
+                class="text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+              >
+                alex@example.com
+              </a>
+            </div>
+
+            <div class="flex items-center gap-4 pt-2">
+              <a
+                href="https://github.com"
+                class="text-muted-foreground hover:text-orange-500 transition-colors"
+                aria-label="GitHub Profile"
+              >
+                <Github class="w-5 h-5" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                class="text-muted-foreground hover:text-orange-500 transition-colors"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin class="w-5 h-5" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Back to Top -->
-      <div class="flex justify-center mt-12">
+      <!-- Bottom Section -->
+      <div
+        class="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-border/20"
+      >
+        <p class="text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} Alex Chen. All rights reserved.
+        </p>
+
+        <!-- Back to Top -->
         <a
           href="#hero"
-          class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors hover-trigger"
+          class="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 transition-colors group"
           aria-label="Back to top"
         >
-          <ArrowUp class="w-5 h-5" />
+          <span>Back to top</span>
+          <ArrowUp
+            class="w-4 h-4 transition-transform group-hover:-translate-y-1"
+          />
         </a>
       </div>
     </div>
