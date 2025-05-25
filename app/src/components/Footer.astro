@@ -3,123 +3,132 @@ import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
 ---
 
 <footer class="py-16 relative overflow-hidden border-t border-border/20">
-  <!-- Enhanced gradient background -->
+  <!-- Enhanced footer gradient with orange theme -->
   <div
-    class="absolute inset-0 bg-gradient-to-t from-orange-500/5 via-transparent to-transparent"
+    class="absolute inset-0 bg-gradient-to-t from-orange-500/8 via-transparent to-transparent"
   >
   </div>
   <div
-    class="absolute inset-0 bg-gradient-to-br from-purple-500/3 via-transparent to-blue-500/3"
+    class="absolute inset-0 bg-gradient-to-br from-orange-500/6 via-transparent to-amber-500/4"
   >
   </div>
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-8 items-start">
-        <!-- Brand & Description -->
-        <div class="md:col-span-1">
-          <div class="text-2xl font-bold mb-4">
-            <span
-              class="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600 bg-clip-text text-transparent"
-            >
-              Alex Chen
-            </span>
-          </div>
-          <p class="text-muted-foreground text-sm leading-relaxed mb-6">
-            Mobile application developer passionate about creating exceptional
-            user experiences. Let's build something amazing together.
-          </p>
-          <div class="flex items-center gap-2 text-sm text-muted-foreground">
-            <span>Made with</span>
-            <Heart class="w-4 h-4 text-orange-500 fill-current" />
-            <span>in San Francisco</span>
-          </div>
-        </div>
+  <div
+    class="absolute inset-0 bg-gradient-to-tl from-yellow-500/3 via-transparent to-orange-500/4"
+  >
+  </div>
 
-        <!-- Quick Links -->
-        <div class="md:col-span-1">
-          <h3 class="font-semibold experience-title mb-4">Quick Links</h3>
-          <div class="space-y-3">
-            <a
-              href="#projects"
-              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
-            >
-              Featured Projects
-            </a>
-            <a
-              href="#contact"
-              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
-            >
-              Get In Touch
-            </a>
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="grid md:grid-cols-3 gap-8 items-start">
+      <!-- Brand & Description -->
+      <div class="md:col-span-1">
+        <div class="text-2xl font-bold mb-4">
+          <span
+            class="bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-500 bg-clip-text text-transparent"
+          >
+            Alex Chen
+          </span>
+        </div>
+        <p class="text-muted-foreground text-sm leading-relaxed mb-6">
+          Full stack developer passionate about creating exceptional digital
+          experiences. Let's build something amazing together.
+        </p>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+          <span>Made with</span>
+          <Heart className="w-4 h-4 text-orange-500 fill-current" />
+          <span>in San Francisco</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="md:col-span-1">
+        <h3 class="font-semibold experience-title mb-4">Quick Links</h3>
+        <div class="space-y-3">
+          <a
+            href="#projects"
+            class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+          >
+            Featured Projects
+          </a>
+          <a
+            href="#contact"
+            class="block text-sm text-muted-foreground hover:text-amber-500 transition-colors"
+          >
+            Get In Touch
+          </a>
+          <a
+            href="mailto:alex@example.com"
+            class="block text-sm text-muted-foreground hover:text-yellow-500 transition-colors"
+          >
+            Work Together
+          </a>
+          <a
+            href="/blog"
+            class="block text-sm text-muted-foreground hover:text-orange-600 transition-colors"
+          >
+            Blog & Insights
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="md:col-span-1">
+        <h3 class="font-semibold experience-title mb-4">Connect</h3>
+        <div class="space-y-4">
+          <!-- Email -->
+          <div class="flex items-center gap-3">
+            <Mail className="w-4 h-4 text-orange-500" />
             <a
               href="mailto:alex@example.com"
-              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+              class="text-sm text-muted-foreground hover:text-orange-500 transition-colors"
             >
-              Work Together
+              alex@example.com
             </a>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="flex items-center gap-3">
+            <Linkedin className="w-4 h-4 text-amber-500" />
             <a
-              href="/blog"
-              class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+              href="https://linkedin.com/in/alexchen"
+              class="text-sm text-muted-foreground hover:text-amber-500 transition-colors"
             >
-              Blog & Insights
+              linkedin.com/in/alexchen
+            </a>
+          </div>
+
+          <!-- GitHub -->
+          <div class="flex items-center gap-3">
+            <Github className="w-4 h-4 text-yellow-500" />
+            <a
+              href="https://github.com/alexchen"
+              class="text-sm text-muted-foreground hover:text-yellow-500 transition-colors"
+            >
+              github.com/alexchen
             </a>
           </div>
         </div>
-
-        <!-- Contact & Social -->
-        <div class="md:col-span-1">
-          <h3 class="font-semibold experience-title mb-4">Connect</h3>
-          <div class="space-y-4">
-            <div class="flex items-center gap-3">
-              <Mail class="w-4 h-4 text-orange-500" />
-              <a
-                href="mailto:alex@example.com"
-                class="text-sm text-muted-foreground hover:text-orange-500 transition-colors"
-              >
-                alex@example.com
-              </a>
-            </div>
-
-            <div class="flex items-center gap-4 pt-2">
-              <a
-                href="https://github.com"
-                class="text-muted-foreground hover:text-orange-500 transition-colors"
-                aria-label="GitHub Profile"
-              >
-                <Github class="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                class="text-muted-foreground hover:text-orange-500 transition-colors"
-                aria-label="LinkedIn Profile"
-              >
-                <Linkedin class="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
+    </div>
 
-      <!-- Bottom Section -->
-      <div
-        class="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-border/20"
+    <!-- Bottom Section -->
+    <div
+      class="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-border/20"
+    >
+      <p class="text-sm text-muted-foreground">
+        &copy; {new Date().getFullYear()} Alex Chen. All rights reserved.
+      </p>
+
+      <!-- Back to Top -->
+      <a
+        href="#hero"
+        class="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 transition-colors group"
+        aria-label="Back to top"
       >
-        <p class="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Alex Chen. All rights reserved.
-        </p>
-
-        <!-- Back to Top -->
-        <a
-          href="#hero"
-          class="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 transition-colors group"
-          aria-label="Back to top"
-        >
-          <span>Back to top</span>
-          <ArrowUp
-            class="w-4 h-4 transition-transform group-hover:-translate-y-1"
-          />
-        </a>
-      </div>
+        <span>Back to top</span>
+        <ArrowUp
+          className="w-4 h-4 transition-transform group-hover:-translate-y-1"
+        />
+      </a>
     </div>
   </div>
 </footer>

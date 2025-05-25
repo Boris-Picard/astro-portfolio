@@ -5,325 +5,329 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 ---
 
 <section id="projects" class="py-32 relative overflow-hidden">
-  <!-- Enhanced gradient background -->
+  <!-- Projects section - Orange theme -->
   <div
-    class="absolute inset-0 bg-gradient-to-bl from-green-500/3 via-transparent to-orange-500/5"
+    class="absolute inset-0 bg-gradient-to-bl from-orange-500/6 via-transparent to-amber-500/4"
   >
   </div>
   <div
-    class="absolute bottom-1/4 left-1/3 w-96 h-96 rounded-full bg-gradient-to-tr from-orange-500/10 via-green-500/5 to-transparent blur-3xl"
+    class="absolute inset-0 bg-gradient-to-tr from-yellow-500/3 via-transparent to-orange-500/5"
+  >
+  </div>
+  <div
+    class="absolute bottom-1/4 left-1/3 w-96 h-96 rounded-full bg-gradient-to-tr from-orange-500/10 via-amber-500/6 to-transparent blur-3xl"
   >
   </div>
 
-  <div class="container mx-auto px-4 relative z-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-20 reveal">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-        <div
-          class="w-20 h-1 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mx-auto mb-8"
-        >
-        </div>
-        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-          A showcase of mobile applications I've built
-        </p>
+  <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <div class="text-center mb-20 reveal">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+      <div
+        class="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full mx-auto mb-8"
+      >
       </div>
+      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        A showcase of web applications I've built
+      </p>
+    </div>
 
-      <!-- Project 1 -->
-      <div class="mb-32 reveal">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <div class="order-2 md:order-1 space-y-6">
-            <div class="space-y-4">
-              <Badge
-                variant="outline"
-                class="border-orange-500/20 text-orange-500 px-4 py-2 bg-orange-500/5"
-              >
-                Featured Project
-              </Badge>
-              <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                FitTracker Pro
-              </h3>
-            </div>
-
-            <p class="text-muted-foreground leading-relaxed text-lg">
-              A comprehensive fitness tracking app with workout planning,
-              progress monitoring, and social features. Built with React Native
-              and Firebase, it offers a seamless experience across iOS and
-              Android.
-            </p>
-
-            <div class="flex flex-wrap gap-3">
-              <Badge
-                class="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-                >React Native</Badge
-              >
-              <Badge
-                class="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-                >Firebase</Badge
-              >
-              <Badge
-                class="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-                >Redux</Badge
-              >
-              <Badge
-                class="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-                >TypeScript</Badge
-              >
-            </div>
-
-            <div class="flex gap-4 pt-2">
-              <Button
-                variant="outline"
-                class="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 group"
-              >
-                <Github class="w-4 h-4 mr-2" />
-                <span>View Code</span>
-              </Button>
-              <Button
-                class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white border-none group"
-              >
-                <span>Live Demo</span>
-                <ExternalLink class="w-4 h-4 ml-2" />
-              </Button>
-            </div>
+    <!-- Project 1 -->
+    <div class="mb-32 reveal">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 space-y-6">
+          <div class="space-y-4">
+            <Badge
+              variant="outline"
+              className="border-orange-500/20 text-orange-500 px-4 py-2 bg-orange-500/5"
+            >
+              Featured Project
+            </Badge>
+            <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+              E-Commerce Platform
+            </h3>
           </div>
 
-          <div class="order-1 md:order-2">
-            <div class="relative">
-              <!-- Project image container with creative border -->
-              <div
-                class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden"
-              >
-                <!-- Animated gradient border -->
-                <div
-                  class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
-                >
-                </div>
+          <p class="text-muted-foreground leading-relaxed text-lg">
+            A comprehensive e-commerce platform with advanced features including
+            real-time inventory management, payment processing, and analytics
+            dashboard. Built with React, Node.js, and PostgreSQL.
+          </p>
 
-                <!-- Inner content -->
-                <div
-                  class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
-                >
-                  <!-- Project image or placeholder -->
-                  <div
-                    class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/10 to-orange-600/5"
-                  >
-                    <div class="text-orange-500 text-6xl">📱</div>
-                  </div>
-                </div>
-              </div>
+          <div class="flex flex-wrap gap-3">
+            <Badge
+              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
+              >React</Badge
+            >
+            <Badge
+              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
+              >Node.js</Badge
+            >
+            <Badge
+              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
+              >PostgreSQL</Badge
+            >
+            <Badge
+              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
+              >TypeScript</Badge
+            >
+          </div>
 
-              <!-- Floating badge -->
-              <div
-                class="absolute -top-6 -right-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
-              >
-                <span class="gradient-text">100K+ Downloads</span>
-              </div>
-            </div>
+          <div class="flex gap-4 pt-2">
+            <Button
+              variant="outline"
+              className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 group"
+            >
+              <Github className="w-4 h-4 mr-2" />
+              <span>View Code</span>
+            </Button>
+            <Button
+              className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white border-none group"
+            >
+              <span>Live Demo</span>
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </Button>
           </div>
         </div>
-      </div>
 
-      <!-- Project 2 -->
-      <div class="mb-32 reveal">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <div class="relative">
-              <!-- Project image container with creative border -->
+        <div class="order-1 md:order-2">
+          <div class="relative">
+            <!-- Project image container with creative border -->
+            <div
+              class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden border-orange-500/10"
+            >
+              <!-- Animated gradient border -->
               <div
-                class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden"
+                class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
               >
-                <!-- Animated gradient border -->
-                <div
-                  class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-20 blur-sm"
-                >
-                </div>
-
-                <!-- Inner content -->
-                <div
-                  class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
-                >
-                  <!-- Project image or placeholder -->
-                  <div
-                    class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500/10 to-blue-600/5"
-                  >
-                    <div class="text-blue-500 text-6xl">🛒</div>
-                  </div>
-                </div>
               </div>
 
-              <!-- Floating badge -->
+              <!-- Inner content -->
               <div
-                class="absolute -top-6 -left-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
+                class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
               >
-                <span class="text-blue-400">E-Commerce App</span>
+                <!-- Project image or placeholder -->
+                <div
+                  class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/10 to-amber-600/5"
+                >
+                  <div class="text-orange-500 text-6xl">🛒</div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="space-y-6">
-            <div class="space-y-4">
-              <Badge
-                variant="outline"
-                class="border-blue-500/20 text-blue-400 px-4 py-2 bg-blue-500/5"
+            <!-- Floating badge -->
+            <div
+              class="absolute -top-6 -right-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
+            >
+              <span
+                class="bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent"
+                >50K+ Users</span
               >
-                Client Project
-              </Badge>
-              <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                ShopEasy
-              </h3>
-            </div>
-
-            <p class="text-muted-foreground leading-relaxed text-lg">
-              E-commerce mobile app with seamless shopping experience, payment
-              integration, and order tracking. Built with Flutter and integrated
-              with Stripe for secure payments.
-            </p>
-
-            <div class="flex flex-wrap gap-3">
-              <Badge
-                class="bg-blue-500/10 text-blue-500 border border-blue-500/20 px-4 py-2"
-                >Flutter</Badge
-              >
-              <Badge
-                class="bg-blue-500/10 text-blue-500 border border-blue-500/20 px-4 py-2"
-                >Stripe</Badge
-              >
-              <Badge
-                class="bg-blue-500/10 text-blue-500 border border-blue-500/20 px-4 py-2"
-                >Node.js</Badge
-              >
-              <Badge
-                class="bg-blue-500/10 text-blue-500 border border-blue-500/20 px-4 py-2"
-                >Firebase</Badge
-              >
-            </div>
-
-            <div class="flex gap-4 pt-2">
-              <Button
-                variant="outline"
-                class="border-blue-500/20 hover:bg-blue-500/10 hover:text-blue-500 group"
-              >
-                <Github class="w-4 h-4 mr-2" />
-                <span>View Code</span>
-              </Button>
-              <Button
-                class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-none group"
-              >
-                <span>Live Demo</span>
-                <ExternalLink class="w-4 h-4 ml-2" />
-              </Button>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Project 3 -->
-      <div class="reveal">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <div class="order-2 md:order-1 space-y-6">
-            <div class="space-y-4">
-              <Badge
-                variant="outline"
-                class="border-green-500/20 text-green-400 px-4 py-2 bg-green-500/5"
+    <!-- Project 2 -->
+    <div class="mb-32 reveal">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="relative">
+            <!-- Project image container with creative border -->
+            <div
+              class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden border-amber-500/10"
+            >
+              <!-- Animated gradient border -->
+              <div
+                class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-20 blur-sm"
               >
-                Personal Project
-              </Badge>
-              <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-                MindfulMoments
-              </h3>
+              </div>
+
+              <!-- Inner content -->
+              <div
+                class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
+              >
+                <!-- Project image or placeholder -->
+                <div
+                  class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-amber-500/10 to-amber-600/5"
+                >
+                  <div class="text-amber-500 text-6xl">📊</div>
+                </div>
+              </div>
             </div>
 
-            <p class="text-muted-foreground leading-relaxed text-lg">
-              Meditation and mindfulness app with guided sessions, progress
-              tracking, and community features. Built with SwiftUI and
-              integrated with HealthKit for comprehensive health monitoring.
-            </p>
-
-            <div class="flex flex-wrap gap-3">
-              <Badge
-                class="bg-green-500/10 text-green-500 border border-green-500/20 px-4 py-2"
-                >SwiftUI</Badge
-              >
-              <Badge
-                class="bg-green-500/10 text-green-500 border border-green-500/20 px-4 py-2"
-                >Core Data</Badge
-              >
-              <Badge
-                class="bg-green-500/10 text-green-500 border border-green-500/20 px-4 py-2"
-                >HealthKit</Badge
-              >
-              <Badge
-                class="bg-green-500/10 text-green-500 border border-green-500/20 px-4 py-2"
-                >CloudKit</Badge
-              >
-            </div>
-
-            <div class="flex gap-4 pt-2">
-              <Button
-                variant="outline"
-                class="border-green-500/20 hover:bg-green-500/10 hover:text-green-500 group"
-              >
-                <Github class="w-4 h-4 mr-2" />
-                <span>View Code</span>
-              </Button>
-              <Button
-                class="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white border-none group"
-              >
-                <span>Live Demo</span>
-                <ExternalLink class="w-4 h-4 ml-2" />
-              </Button>
+            <!-- Floating badge -->
+            <div
+              class="absolute -top-6 -left-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
+            >
+              <span class="text-amber-400">Analytics Platform</span>
             </div>
           </div>
+        </div>
 
-          <div class="order-1 md:order-2">
-            <div class="relative">
-              <!-- Project image container with creative border -->
+        <div class="space-y-6">
+          <div class="space-y-4">
+            <Badge
+              variant="outline"
+              className="border-amber-500/20 text-amber-400 px-4 py-2 bg-amber-500/5"
+            >
+              Client Project
+            </Badge>
+            <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+              Data Analytics Dashboard
+            </h3>
+          </div>
+
+          <p class="text-muted-foreground leading-relaxed text-lg">
+            Real-time data analytics platform with interactive visualizations
+            and machine learning insights. Built with Python FastAPI backend and
+            React frontend with advanced data processing capabilities.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <Badge
+              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
+              >Python</Badge
+            >
+            <Badge
+              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
+              >FastAPI</Badge
+            >
+            <Badge
+              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
+              >React</Badge
+            >
+            <Badge
+              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
+              >PostgreSQL</Badge
+            >
+          </div>
+
+          <div class="flex gap-4 pt-2">
+            <Button
+              variant="outline"
+              className="border-amber-500/20 hover:bg-amber-500/10 hover:text-amber-500 group"
+            >
+              <Github className="w-4 h-4 mr-2" />
+              <span>View Code</span>
+            </Button>
+            <Button
+              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white border-none group"
+            >
+              <span>Live Demo</span>
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="reveal">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="order-2 md:order-1 space-y-6">
+          <div class="space-y-4">
+            <Badge
+              variant="outline"
+              className="border-yellow-500/20 text-yellow-400 px-4 py-2 bg-yellow-500/5"
+            >
+              Personal Project
+            </Badge>
+            <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+              Content Management System
+            </h3>
+          </div>
+
+          <p class="text-muted-foreground leading-relaxed text-lg">
+            Modern headless CMS built with Symfony and API Platform, featuring a
+            React admin interface and flexible content modeling for developers
+            and content creators.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <Badge
+              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
+              >Symfony</Badge
+            >
+            <Badge
+              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
+              >API Platform</Badge
+            >
+            <Badge
+              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
+              >React</Badge
+            >
+            <Badge
+              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
+              >Docker</Badge
+            >
+          </div>
+
+          <div class="flex gap-4 pt-2">
+            <Button
+              variant="outline"
+              className="border-yellow-500/20 hover:bg-yellow-500/10 hover:text-yellow-500 group"
+            >
+              <Github className="w-4 h-4 mr-2" />
+              <span>View Code</span>
+            </Button>
+            <Button
+              className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white border-none group"
+            >
+              <span>Live Demo</span>
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </Button>
+          </div>
+        </div>
+
+        <div class="order-1 md:order-2">
+          <div class="relative">
+            <!-- Project image container with creative border -->
+            <div
+              class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden border-yellow-500/10"
+            >
+              <!-- Animated gradient border -->
               <div
-                class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden"
+                class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-yellow-500 to-transparent opacity-20 blur-sm"
               >
-                <!-- Animated gradient border -->
-                <div
-                  class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-20 blur-sm"
-                >
-                </div>
-
-                <!-- Inner content -->
-                <div
-                  class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
-                >
-                  <!-- Project image or placeholder -->
-                  <div
-                    class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-green-500/10 to-green-600/5"
-                  >
-                    <div class="text-green-500 text-6xl">🌱</div>
-                  </div>
-                </div>
               </div>
 
-              <!-- Floating badge -->
+              <!-- Inner content -->
               <div
-                class="absolute -bottom-6 -right-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
+                class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
               >
-                <span class="text-green-400">App Store Featured</span>
+                <!-- Project image or placeholder -->
+                <div
+                  class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-500/10 to-yellow-600/5"
+                >
+                  <div class="text-yellow-500 text-6xl">📝</div>
+                </div>
               </div>
+            </div>
+
+            <!-- Floating badge -->
+            <div
+              class="absolute -bottom-6 -right-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
+            >
+              <span class="text-yellow-400">Open Source</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- View All Projects Button -->
-      <div class="text-center mt-16 reveal">
-        <Button
-          variant="outline"
-          size="lg"
-          class="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6 group"
-        >
-          <span>View All Projects</span>
-          <ArrowRight
-            class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
-          />
-        </Button>
-      </div>
+    <!-- View All Projects Button -->
+    <div class="text-center mt-16 reveal">
+      <Button
+        variant="outline"
+        size="lg"
+        className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6 group"
+      >
+        <span>View All Projects</span>
+        <ArrowRight
+          className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+        />
+      </Button>
     </div>
   </div>
 </section>
