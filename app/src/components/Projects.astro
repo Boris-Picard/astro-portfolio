@@ -1,11 +1,11 @@
 ---
-import { Button } from "@/components/ui/button";
+import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Github, ExternalLink, ArrowRight } from "lucide-react";
 ---
 
 <section id="projects" class="py-32 relative overflow-hidden">
-  <!-- Projects section - Orange theme -->
   <div
     class="absolute inset-0 bg-gradient-to-bl from-orange-500/6 via-transparent to-amber-500/4"
   >
@@ -20,6 +20,7 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
   </div>
 
   <div class="max-w-7xl mx-auto px-4 relative z-10">
+    <!-- Header -->
     <div class="text-center mb-20 reveal">
       <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
       <div
@@ -31,289 +32,108 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
       </p>
     </div>
 
-    <!-- Project 1 -->
-    <div class="mb-32 reveal">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="order-2 md:order-1 space-y-6">
-          <div class="space-y-4">
-            <Badge
-              variant="outline"
-              className="border-orange-500/20 text-orange-500 px-4 py-2 bg-orange-500/5"
-            >
-              Featured Project
-            </Badge>
-            <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-              E-Commerce Platform
-            </h3>
-          </div>
-
-          <p class="text-muted-foreground leading-relaxed text-lg">
-            A comprehensive e-commerce platform with advanced features including
-            real-time inventory management, payment processing, and analytics
-            dashboard. Built with React, Node.js, and PostgreSQL.
-          </p>
-
-          <div class="flex flex-wrap gap-3">
-            <Badge
-              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-              >React</Badge
-            >
-            <Badge
-              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-              >Node.js</Badge
-            >
-            <Badge
-              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-              >PostgreSQL</Badge
-            >
-            <Badge
-              className="bg-orange-500/10 text-orange-500 border border-orange-500/20 px-4 py-2"
-              >TypeScript</Badge
-            >
-          </div>
-
-          <div class="flex gap-4 pt-2">
-            <Button
-              variant="outline"
-              className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 group"
-            >
-              <Github className="w-4 h-4 mr-2" />
-              <span>View Code</span>
-            </Button>
-            <Button
-              className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white border-none group"
-            >
-              <span>Live Demo</span>
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
-        </div>
-
-        <div class="order-1 md:order-2">
-          <div class="relative">
-            <!-- Project image container with creative border -->
-            <div
-              class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden border-orange-500/10"
-            >
-              <!-- Animated gradient border -->
-              <div
-                class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-500 to-transparent opacity-20 blur-sm"
-              >
-              </div>
-
-              <!-- Inner content -->
-              <div
-                class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
-              >
-                <!-- Project image or placeholder -->
+    <!-- Projects List -->
+    <div class="space-y-32">
+      {
+        projects.map((proj, idx) => {
+          const isFirst = idx % 2 === 0;
+          return (
+            <div class="mb-32 reveal">
+              <div class="grid md:grid-cols-2 gap-16 items-center">
+                {/* Text block */}
                 <div
-                  class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-500/10 to-amber-600/5"
+                  class={`space-y-6 ${isFirst ? "md:order-1" : "md:order-2"}`}
                 >
-                  <div class="text-orange-500 text-6xl">🛒</div>
+                  <div class="space-y-4">
+                    <Badge
+                      variant="outline"
+                      className="px-4 py-2"
+                      style={{
+                        borderColor: proj.theme.border,
+                        color: proj.theme.primary,
+                        backgroundColor: proj.theme.light,
+                      }}
+                    >
+                      {proj.type} Project
+                    </Badge>
+                    <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+                      {proj.title}
+                    </h3>
+                  </div>
+                  <p class="text-muted-foreground leading-relaxed text-lg">
+                    {proj.description}
+                  </p>
+                  <div class="flex flex-wrap gap-3">
+                    {proj.techs.map((tech) => (
+                      <Badge
+                        className="px-4 py-2 border"
+                        style={{
+                          backgroundColor: proj.techColors[tech].bgColor,
+                          color: proj.techColors[tech].color,
+                          borderColor: proj.techColors[tech].borderColor,
+                        }}
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div class="flex gap-4 pt-2">
+                    <Button
+                      variant="outline"
+                      className="group transition-colors"
+                      style={{
+                        borderColor: proj.theme.border,
+                      }}
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      <span>View Code</span>
+                    </Button>
+                    <Button
+                      className="text-white border-none group hover:opacity-90 transition-opacity"
+                      style={{
+                        background: proj.theme.gradient,
+                      }}
+                    >
+                      <span>Live Demo</span>
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Image block */}
+                <div class={isFirst ? "md:order-2" : "md:order-1"}>
+                  <div
+                    class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden border"
+                    style={{
+                      borderColor: proj.theme.border,
+                    }}
+                  >
+                    <div
+                      class="absolute -inset-[1px] opacity-20 blur-sm"
+                      style={{
+                        background: `linear-gradient(to right, transparent, ${proj.theme.primary}, transparent)`,
+                      }}
+                    />
+                    <div class="w-full h-full card-bg rounded-2xl relative overflow-hidden">
+                      <img
+                        src={proj.image}
+                        alt={proj.title}
+                        class="w-full h-full object-cover"
+                      />
+                      <div
+                        class="absolute inset-0"
+                        style={{
+                          background: `linear-gradient(to bottom right, ${proj.theme.light}, rgba(0,0,0,0.02))`,
+                        }}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <!-- Floating badge -->
-            <div
-              class="absolute -top-6 -right-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
-            >
-              <span
-                class="bg-gradient-to-r from-orange-500 to-amber-600 bg-clip-text text-transparent"
-                >50K+ Users</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2 -->
-    <div class="mb-32 reveal">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div>
-          <div class="relative">
-            <!-- Project image container with creative border -->
-            <div
-              class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden border-amber-500/10"
-            >
-              <!-- Animated gradient border -->
-              <div
-                class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-20 blur-sm"
-              >
-              </div>
-
-              <!-- Inner content -->
-              <div
-                class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
-              >
-                <!-- Project image or placeholder -->
-                <div
-                  class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-amber-500/10 to-amber-600/5"
-                >
-                  <div class="text-amber-500 text-6xl">📊</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Floating badge -->
-            <div
-              class="absolute -top-6 -left-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
-            >
-              <span class="text-amber-400">Analytics Platform</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="space-y-6">
-          <div class="space-y-4">
-            <Badge
-              variant="outline"
-              className="border-amber-500/20 text-amber-400 px-4 py-2 bg-amber-500/5"
-            >
-              Client Project
-            </Badge>
-            <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-              Data Analytics Dashboard
-            </h3>
-          </div>
-
-          <p class="text-muted-foreground leading-relaxed text-lg">
-            Real-time data analytics platform with interactive visualizations
-            and machine learning insights. Built with Python FastAPI backend and
-            React frontend with advanced data processing capabilities.
-          </p>
-
-          <div class="flex flex-wrap gap-3">
-            <Badge
-              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
-              >Python</Badge
-            >
-            <Badge
-              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
-              >FastAPI</Badge
-            >
-            <Badge
-              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
-              >React</Badge
-            >
-            <Badge
-              className="bg-amber-500/10 text-amber-500 border border-amber-500/20 px-4 py-2"
-              >PostgreSQL</Badge
-            >
-          </div>
-
-          <div class="flex gap-4 pt-2">
-            <Button
-              variant="outline"
-              className="border-amber-500/20 hover:bg-amber-500/10 hover:text-amber-500 group"
-            >
-              <Github className="w-4 h-4 mr-2" />
-              <span>View Code</span>
-            </Button>
-            <Button
-              className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white border-none group"
-            >
-              <span>Live Demo</span>
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="reveal">
-      <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="order-2 md:order-1 space-y-6">
-          <div class="space-y-4">
-            <Badge
-              variant="outline"
-              className="border-yellow-500/20 text-yellow-400 px-4 py-2 bg-yellow-500/5"
-            >
-              Personal Project
-            </Badge>
-            <h3 class="text-2xl md:text-3xl font-bold leading-tight">
-              Content Management System
-            </h3>
-          </div>
-
-          <p class="text-muted-foreground leading-relaxed text-lg">
-            Modern headless CMS built with Symfony and API Platform, featuring a
-            React admin interface and flexible content modeling for developers
-            and content creators.
-          </p>
-
-          <div class="flex flex-wrap gap-3">
-            <Badge
-              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
-              >Symfony</Badge
-            >
-            <Badge
-              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
-              >API Platform</Badge
-            >
-            <Badge
-              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
-              >React</Badge
-            >
-            <Badge
-              className="bg-yellow-500/10 text-yellow-500 border border-yellow-500/20 px-4 py-2"
-              >Docker</Badge
-            >
-          </div>
-
-          <div class="flex gap-4 pt-2">
-            <Button
-              variant="outline"
-              className="border-yellow-500/20 hover:bg-yellow-500/10 hover:text-yellow-500 group"
-            >
-              <Github className="w-4 h-4 mr-2" />
-              <span>View Code</span>
-            </Button>
-            <Button
-              className="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white border-none group"
-            >
-              <span>Live Demo</span>
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </Button>
-          </div>
-        </div>
-
-        <div class="order-1 md:order-2">
-          <div class="relative">
-            <!-- Project image container with creative border -->
-            <div
-              class="project-card aspect-[4/3] rounded-2xl p-1 relative overflow-hidden border-yellow-500/10"
-            >
-              <!-- Animated gradient border -->
-              <div
-                class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-yellow-500 to-transparent opacity-20 blur-sm"
-              >
-              </div>
-
-              <!-- Inner content -->
-              <div
-                class="w-full h-full card-bg rounded-2xl flex items-center justify-center relative overflow-hidden"
-              >
-                <!-- Project image or placeholder -->
-                <div
-                  class="relative z-10 w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-500/10 to-yellow-600/5"
-                >
-                  <div class="text-yellow-500 text-6xl">📝</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Floating badge -->
-            <div
-              class="absolute -bottom-6 -right-6 glass rounded-full px-4 py-2 text-sm font-medium neon-glow"
-            >
-              <span class="text-yellow-400">Open Source</span>
-            </div>
-          </div>
-        </div>
-      </div>
+          );
+        })
+      }
     </div>
 
     <!-- View All Projects Button -->
