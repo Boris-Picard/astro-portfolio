@@ -1,5 +1,4 @@
 ---
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Calendar,
@@ -10,13 +9,13 @@ import {
   Download,
   BookOpen,
 } from "lucide-react";
-
 import {
   profile,
   education,
   certifications,
   experiences,
 } from "@/data/profile";
+import { Image } from "astro:assets";
 ---
 
 <section id="about" class="py-32 relative overflow-hidden">
@@ -123,12 +122,11 @@ import {
                   <div class="p-4 bg-muted-custom rounded-lg border border-amber-500/10 hover:border-amber-500/20 transition-colors">
                     <div class="flex items-center justify-between mb-2">
                       <h4 class="font-semibold text-sm">{edu.degree}</h4>
-                      <Badge
-                        variant="outline"
-                        className="border-amber-500/20 text-amber-500 bg-amber-500/5 text-xs"
+                      <div
+                        class={`flex items-center gap-2 text-end text-xs text-${edu.color}-500 bg-${edu.color}-500/10`}
                       >
                         {edu.period}
-                      </Badge>
+                      </div>
                     </div>
                     <p class="text-amber-500 text-xs font-medium mb-1">
                       {edu.institution}
@@ -178,35 +176,43 @@ import {
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 class="text-xl font-semibold">My Story</h3>
+                <h3 class="text-xl font-semibold">Mon Parcours</h3>
                 <p class="text-sm text-muted-foreground">
-                  Professional Journey
+                  Une Reconversion Passionnante
                 </p>
               </div>
             </div>
             <div class="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                With over <span class="text-orange-500 font-medium"
-                  >5 years of experience</span
-                > in full stack development, I've had the privilege of working with
-                startups and established companies to bring their digital visions
-                to life.
+                À <span class="text-orange-500 font-medium">32 ans</span>, j'ai
+                entamé une reconversion professionnelle qui a transformé ma
+                passion pour la technologie en expertise technique. Depuis
+                septembre 2023, je me suis plongé dans l'univers du
+                développement web avec une détermination sans faille.
               </p>
               <p>
-                My journey began with a passion for creating seamless user
-                experiences. I specialize in <span
+                Mon parcours a débuté par une formation intensive <span
+                  class="text-orange-500 font-medium">DWWM</span
+                > à LA MANU, où j'ai maîtrisé les fondamentaux : <span
+                  class="text-orange-500 font-medium">HTML/CSS/JS</span
+                >, <span class="text-orange-500 font-medium">PHP</span>, et <span
+                  class="text-orange-500 font-medium">MySQL</span
+                >. Durant ma période d'auto-formation, j'ai élargi mes
+                compétences vers les technologies modernes comme <span
                   class="text-orange-500 font-medium">React</span
-                >, <span class="text-orange-500 font-medium">Next.js</span>, and <span
-                  class="text-orange-500 font-medium">Node.js</span
-                >, but I'm equally comfortable with backend technologies like <span
-                  class="text-orange-500 font-medium">Python</span
-                > and <span class="text-orange-500 font-medium">PHP</span>.
+                >, <span class="text-orange-500 font-medium">Next.js</span>, et
+                la <span class="text-orange-500 font-medium">stack MERN</span>.
               </p>
               <p>
-                I believe that great applications are born from the perfect
-                blend of beautiful design, clean code, and deep understanding of
-                user behavior. Every project I work on is an opportunity to push
-                the boundaries of what's possible on the web.
+                Aujourd'hui en alternance chez <span
+                  class="text-orange-500 font-medium">Actimage</span
+                > tout en poursuivant mes études au CESI, je développe des applications
+                complètes avec <span class="text-orange-500 font-medium"
+                  >React</span
+                >, <span class="text-orange-500 font-medium">Symfony</span>, et <span
+                  class="text-orange-500 font-medium">Docker</span
+                >. Chaque projet est une opportunité d'innover et de repousser
+                mes limites techniques dans le développement full stack moderne.
               </p>
             </div>
           </div>
@@ -254,24 +260,33 @@ import {
                           {exp.period}
                         </div>
                       </div>
-                      <p
-                        class={`text-${exp.color}-500 text-sm font-medium mb-3`}
+                      <div
+                        class={`flex items-center text-${exp.color}-500 text-sm font-medium mb-3 gap-2`}
                       >
-                        {exp.company}
-                      </p>
+                        {exp.company.map(({name, logo, color}) => {
+                        return <Image
+                          src={logo}
+                          alt={`${name} logo`}
+                          class="w-5 h-5 object-contain"
+                        />
+                        <span style={{color: color}}>{name}</span>
+                        })}
+                      </div>
                       <p class="text-muted-foreground text-sm leading-relaxed mb-3">
                         {exp.description}
                       </p>
                       <div class="flex flex-wrap gap-2">
                         {exp.highlights.map((h) => (
-                          <>
+                          <div class="flex items-center gap-1">
+                            {/* bullet colorée via inline-style */}
                             <div
-                              class={`w-2 h-2 rounded-full bg-${exp.color}-400`}
+                              class="w-2 h-2 rounded-full"
+                              style={{ backgroundColor: h.color }}
                             />
                             <span class="text-xs text-muted-foreground">
-                              {h}
+                              {h.name}
                             </span>
-                          </>
+                          </div>
                         ))}
                       </div>
                     </div>
