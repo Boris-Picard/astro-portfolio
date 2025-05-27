@@ -5,6 +5,8 @@ export interface Project {
     techs: string[];
     techColors: Record<string, { color: string; bgColor: string; borderColor: string }>;
     image: string;
+    github: string;
+    site: string;
     theme: {
         primary: string;
         light: string;
@@ -20,6 +22,8 @@ export const projects: Project[] = [
         type: 'Featured',
         description: 'A comprehensive e-commerce platform with advanced features including real-time inventory management, payment processing, and analytics dashboard.',
         techs: ['React', 'Node.js', 'PostgreSQL', 'TypeScript'],
+        github: "test",
+        site: "test",
         techColors: {
             React: {
                 color: '#61DAFB',
@@ -56,6 +60,8 @@ export const projects: Project[] = [
         type: 'Client',
         description: 'Real-time data analytics platform with interactive visualizations and machine learning insights.',
         techs: ['Python', 'FastAPI', 'React', 'PostgreSQL'],
+        github: "",
+        site: "",
         techColors: {
             Python: {
                 color: '#60A5FA',
@@ -92,6 +98,8 @@ export const projects: Project[] = [
         type: 'Personal',
         description: 'Modern headless CMS built with Symfony and API Platform, featuring a React admin interface.',
         techs: ['Symfony', 'API Platform', 'React', 'Docker'],
+        github: "",
+        site: "",
         techColors: {
             Symfony: {
                 color: '#6B7280',

@@ -78,25 +78,33 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
                     ))}
                   </div>
                   <div class="flex gap-4 pt-2">
-                    <Button
-                      variant="outline"
-                      className="group transition-colors"
-                      style={{
-                        borderColor: proj.theme.border,
-                      }}
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      <span>View Code</span>
-                    </Button>
-                    <Button
-                      className="text-white border-none group hover:opacity-90 transition-opacity"
-                      style={{
-                        background: proj.theme.gradient,
-                      }}
-                    >
-                      <span>Live Demo</span>
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
+                    {proj.github && (
+                      <a href={proj.github} target="_blank">
+                        <Button
+                          variant="outline"
+                          className="group transition-colors cursor-pointer rounded-full"
+                          style={{
+                            borderColor: proj.theme.border,
+                          }}
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          <span>View Code</span>
+                        </Button>
+                      </a>
+                    )}
+                    {proj.site && (
+                      <a href={proj.site} target="_blank">
+                        <Button
+                          className="text-white border-none group cursor-pointer rounded-full hover:opacity-90 transition-opacity"
+                          style={{
+                            background: proj.theme.gradient,
+                          }}
+                        >
+                          <span>Live Demo</span>
+                          <ExternalLink className="w-4 h-4 ml-2" />
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </div>
 
