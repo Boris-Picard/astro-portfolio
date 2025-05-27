@@ -1,9 +1,18 @@
+import type { ImageMetadata } from 'astro';
 import actimageLogo from '../assets/actimage_logo.jpg';
+import cesiLogo from '../assets/cesi_logo.png';
+import lamanuLogo from '../assets/la_manu_logo.png';
+
+export interface Institution {
+    name: string;
+    logo: ImageMetadata;
+}
 
 export interface EducationItem {
     degree: string;
     period: string;
-    institution: string;
+    location: string;
+    institution: Institution[];
     honors?: string;
     color: "orange" | "amber" | "yellow";
 }
@@ -51,14 +60,26 @@ export const education: EducationItem[] = [
     {
         degree: "Concepteur Développeur d'Applications (Niveau 6)",
         period: "Sept. 2024 – En cours",
-        institution: "CESI École d'Ingénieurs",
+        location: "Strasbourg",
+        institution: [
+            {
+                name: "CESI École d'Ingénieurs",
+                logo: cesiLogo,
+            }
+        ],
         honors: "En alternance",
         color: 'orange'
     },
     {
         degree: "Développeur Web et Web Mobile (Niveau 5)",
         period: "Sept. 2023 - Mars 2024",
-        institution: "LA MANU - Amiens",
+        location: "Amiens",
+        institution: [
+            {
+                name: "LA MANU - Amiens",
+                logo: lamanuLogo,
+            }
+        ],
         honors: "Diplôme obtenu",
         color: 'orange'
     },
@@ -81,7 +102,7 @@ export const experiences: ExperienceItem[] = [
             "Développement d'applications web complètes en React et Symfony. Conception de cahiers des charges, modélisation UML/MERISE, mise en place de l'architecture avec API Platform et Docker. Déploiement avec CI/CD GitHub Actions sur Vercel, Koyeb et Neon PostgreSQL.",
         highlights: [
             { name: "React & Symfony", color: "#61DBFB" },
-            { name: "API Platform", color: "#2F303E" },
+            { name: "API Platform", color: "#0099A1" },
             { name: "Docker", color: "#2496ED" },
             { name: "CI/CD", color: "#8B5CF6" },
             { name: "UML/MERISE", color: "#F97316" },

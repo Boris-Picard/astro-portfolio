@@ -16,6 +16,7 @@ import {
   experiences,
 } from "@/data/profile";
 import { Image } from "astro:assets";
+import { Badge } from "./ui/badge";
 ---
 
 <section id="about" class="py-32 relative overflow-hidden">
@@ -128,9 +129,18 @@ import { Image } from "astro:assets";
                         {edu.period}
                       </div>
                     </div>
-                    <p class="text-amber-500 text-xs font-medium mb-1">
-                      {edu.institution}
-                    </p>
+                    {edu.institution.map(({name, logo}) => {
+                    return <div class="flex gap-2 items-center mb-2">
+                    <Image
+                          src={logo}
+                          alt={`${name} logo`}
+                          class="w-5 h-5 object-contain"
+                        /> 
+                      <span class="text-xs font-medium text-center">
+                          {name}
+                        </span>
+                    </div> 
+                    })}
                     {edu.honors && (
                       <p class="text-muted-foreground text-xs">{edu.honors}</p>
                     )}
@@ -278,7 +288,6 @@ import { Image } from "astro:assets";
                       <div class="flex flex-wrap gap-2">
                         {exp.highlights.map((h) => (
                           <div class="flex items-center gap-1">
-                            {/* bullet colorée via inline-style */}
                             <div
                               class="w-2 h-2 rounded-full"
                               style={{ backgroundColor: h.color }}
