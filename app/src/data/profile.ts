@@ -99,7 +99,7 @@ export const experiences: ExperienceItem[] = [
         }],
         period: "Sept. 2024 – Présent",
         description:
-            "Développement d'applications web complètes en React et Symfony. Conception de cahiers des charges, modélisation UML/MERISE, mise en place de l'architecture avec API Platform et Docker. Déploiement avec CI/CD GitHub Actions sur Vercel, Koyeb et Neon PostgreSQL.",
+            "a modifier",
         highlights: [
             { name: "React & Symfony", color: "#61DBFB" },
             { name: "API Platform", color: "#0099A1" },
