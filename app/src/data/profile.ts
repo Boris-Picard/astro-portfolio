@@ -29,7 +29,6 @@ export interface HighlightsColumnItem {
 
 export interface Company {
     name: string;
-    color: string;
     logo: ImageMetadata;
 }
 
@@ -94,7 +93,6 @@ export const experiences: ExperienceItem[] = [
         title: "Développeur Full Stack",
         company: [{
             name: "Actimage (Alternance)",
-            color: "#1A10A3",
             logo: actimageLogo,
         }],
         period: "Sept. 2024 – Présent",

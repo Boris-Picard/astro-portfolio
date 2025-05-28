@@ -1,3 +1,5 @@
+import test from "../assets/mountains-5173728_1280.jpg"
+
 export interface Links {
     name: string;
     link: string;
@@ -9,7 +11,7 @@ export interface Project {
     description: string;
     techs: string[];
     techColors: Record<string, { color: string; bgColor: string; borderColor: string }>;
-    image: string;
+    image: ImageMetadata;
     github: Links[];
     site: Links[];
     theme: {
@@ -57,7 +59,7 @@ export const projects: Project[] = [
                 borderColor: 'rgba(96, 165, 250, 0.3)'
             },
         },
-        image: '/images/projects/e-commerce.png',
+        image: test,
         theme: {
             primary: '#f97316',
             light: 'rgba(249, 115, 22, 0.1)',
@@ -101,7 +103,7 @@ export const projects: Project[] = [
                 borderColor: 'rgba(96, 165, 250, 0.3)'
             },
         },
-        image: '/images/projects/data-dashboard.png',
+        image: test,
         theme: {
             primary: '#f59e0b',
             light: 'rgba(245, 158, 11, 0.1)',
@@ -145,7 +147,7 @@ export const projects: Project[] = [
                 borderColor: 'rgba(59, 130, 246, 0.3)'
             },
         },
-        image: '/images/projects/cms.png',
+        image: test,
         theme: {
             primary: '#eab308',
             light: 'rgba(234, 179, 8, 0.1)',

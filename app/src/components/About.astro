@@ -273,13 +273,13 @@ import { Badge } from "./ui/badge";
                       <div
                         class={`flex items-center text-${exp.color}-500 text-sm font-medium mb-3 gap-2`}
                       >
-                        {exp.company.map(({name, logo, color}) => {
+                        {exp.company.map(({name, logo}) => {
                         return <Image
                           src={logo}
                           alt={`${name} logo`}
                           class="w-5 h-5 object-contain"
                         />
-                        <span style={{color: color}}>{name}</span>
+                        <span class="text-black dark:text-white">{name}</span>
                         })}
                       </div>
                       <p class="text-muted-foreground text-sm leading-relaxed mb-3">

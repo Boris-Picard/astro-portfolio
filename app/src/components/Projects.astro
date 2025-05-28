@@ -3,6 +3,7 @@ import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import { Image } from "astro:assets";
 ---
 
 <section id="projects" class="py-32 relative overflow-hidden">
@@ -47,7 +48,7 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
                   <div class="space-y-4">
                     <Badge
                       variant="outline"
-                      className="px-4 py-2"
+                      className="px-4 py-2 rounded-md"
                       style={{
                         borderColor: proj.theme.border,
                         color: proj.theme.primary,
@@ -66,7 +67,7 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
                   <div class="flex flex-wrap gap-3">
                     {proj.techs.map((tech) => (
                       <Badge
-                        className="px-4 py-2 border"
+                      className="rounded-md"
                         style={{
                           backgroundColor: proj.techColors[tech].bgColor,
                           color: proj.techColors[tech].color,
@@ -103,7 +104,7 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
                             }}
                           >
                             <span>{name}</span>
-                            <ExternalLink className="w-4 h-4 ml-2" />
+                            <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                           </Button>
                         </a>
                       ))}
@@ -125,7 +126,7 @@ import { Github, ExternalLink, ArrowRight } from "lucide-react";
                       }}
                     />
                     <div class="w-full h-full card-bg rounded-2xl relative overflow-hidden">
-                      <img
+                      <Image
                         src={proj.image}
                         alt={proj.title}
                         class="w-full h-full object-cover"
