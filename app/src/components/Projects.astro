@@ -1,9 +1,10 @@
 ---
 import { projects } from "@/data/projects";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Github, ExternalLink, ArrowRight } from "lucide-react";
 import { Image } from "astro:assets";
+import { cn } from "@/lib/utils";
 ---
 
 <section id="projects" class="py-32 relative overflow-hidden">
@@ -67,7 +68,7 @@ import { Image } from "astro:assets";
                   <div class="flex flex-wrap gap-3">
                     {proj.techs.map((tech) => (
                       <Badge
-                      className="rounded-md"
+                        className="rounded-md"
                         style={{
                           backgroundColor: proj.techColors[tech].bgColor,
                           color: proj.techColors[tech].color,
@@ -81,31 +82,42 @@ import { Image } from "astro:assets";
                   <div class="flex gap-4 pt-2">
                     {proj.github &&
                       proj.github.map(({ name, link }) => (
-                        <a href={link} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            variant="outline"
-                            className="group transition-colorsrounded-full"
-                            style={{
-                              borderColor: proj.theme.border,
-                            }}
-                          >
-                            <Github className="w-4 h-4 mr-2" />
-                            <span>{name}</span>
-                          </Button>
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class={cn(
+                            buttonVariants({
+                              variant: "outline",
+                              size: "default",
+                            }),
+                            "group transition-colors rounded-full"
+                          )}
+                          style={{ borderColor: proj.theme.border }}
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          <span>{name}</span>
                         </a>
                       ))}
                     {proj.site &&
                       proj.site.map(({ name, link }) => (
-                        <a href={link} target="_blank" rel="noopener noreferrer">
-                          <Button
-                            className="text-white border-none grouprounded-full hover:opacity-90 transition-opacity"
-                            style={{
-                              background: proj.theme.gradient,
-                            }}
-                          >
-                            <span>{name}</span>
-                            <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                          </Button>
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class={cn(
+                            buttonVariants({
+                              variant: "default",
+                              size: "default",
+                            }),
+                            "group rounded-full text-white border-none hover:opacity-90 transition-opacity"
+                          )}
+                          style={{
+                            background: proj.theme.gradient,
+                          }}
+                        >
+                          <span>{name}</span>
+                          <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
                         </a>
                       ))}
                   </div>

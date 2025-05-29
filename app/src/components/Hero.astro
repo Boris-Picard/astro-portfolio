@@ -1,7 +1,8 @@
 ---
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronRight, Github, Linkedin, Mail } from "lucide-react";
+import { cn } from "@/lib/utils";
 ---
 
 <section
@@ -81,25 +82,26 @@ import { ChevronRight, Github, Linkedin, Mail } from "lucide-react";
             target="_blank"
             aria-label="Email"
             rel="noopener noreferrer"
+            class={cn(
+              buttonVariants({ size: "lg" }),
+              "border-orange-500/20 hover:bg-orange-500/10 rounded-full px-8 py-6 inline-flex items-center group"
+            )}
           >
-            <Button
-              className="border-orange-500/20 hover:bg-orange-500/10 rounded-full px-8 py-6"
-              size="lg"
-            >
-              <span>Me contacter</span>
-              <Mail
-                className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
-              />
-            </Button>
+            <span>Me contacter</span>
+            <Mail
+              className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+            />
           </a>
-          <a href="#projects" aria-label="Mes projets">
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6"
-            >
-              Voir mes projets
-            </Button>
+
+          <a
+            href="#projects"
+            aria-label="Mes projets"
+            class={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6"
+            )}
+          >
+            Voir mes projets
           </a>
         </div>
 

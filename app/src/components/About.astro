@@ -1,5 +1,5 @@
 ---
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Calendar,
   MapPin,
@@ -17,6 +17,7 @@ import {
 } from "@/data/profile";
 import { Image } from "astro:assets";
 import { Badge } from "./ui/badge";
+import { cn } from "@/lib/utils";
 ---
 
 <section id="about" class="py-32 relative overflow-hidden">
@@ -89,13 +90,16 @@ import { Badge } from "./ui/badge";
                 </div>
               )
             }
-            <a href={profile.cv} download>
-              <Button
-                className="w-full bg-gradient-to-r from-orange-500 to-amber-600 border-none text-white group rounded-full"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download CV
-              </Button>
+            <a
+              href={profile.cv}
+              download
+              class={cn(
+                buttonVariants({ variant: "default", size: "default" }),
+                "w-50 bg-gradient-to-r from-orange-500 to-amber-600 border-none text-white group rounded-full"
+              )}
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Télécharger mon CV
             </a>
           </div>
         </div>
