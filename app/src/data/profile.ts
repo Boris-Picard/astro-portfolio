@@ -103,14 +103,15 @@ export const experiences: ExperienceItem[] = [
         }],
         period: "Sept. 2024 – Présent",
         description:
-            "a modifier",
+            "Participation au développement d’applications web sur mesure dans un environnement full stack. Intégration front-end avec Drupal, Twig, SCSS et JavaScript. Développement back-end avec PHP et Symfony, gestion des entités, création de modules personnalisés, et respect des bonnes pratiques. Travail en équipe Agile avec utilisation de Docker pour l’environnement local et Jenkins pour l’automatisation CI/CD.",
+
         highlights: [
-            { name: "React & Symfony", color: "#61DBFB" },
-            { name: "API Platform", color: "#0099A1" },
+            { name: "Drupal", color: "#0678BE" },
+            { name: "Twig", color: "#CCBF00" },
+            { name: "Symfony", color: "#6c6e73" },
+            { name: "SCSS", color: "#CD6799" },
+            { name: "JavaScript", color: "#F7DF1E" },
             { name: "Docker", color: "#2496ED" },
-            { name: "CI/CD", color: "#8B5CF6" },
-            { name: "UML/MERISE", color: "#F97316" },
-            { name: "Déploiement Cloud", color: "#0EA5E9" }
         ],
         color: "orange",
     },
