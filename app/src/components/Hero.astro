@@ -54,78 +54,83 @@ import { ChevronRight, Github, Linkedin, Mail } from "lucide-react";
           variant="outline"
           className="mb-6 border-orange-500/30 text-orange-500 bg-orange-500/5 reveal reveal-delay-1"
         >
-          Full Stack Developer
+          Développeur Full Stack
         </Badge>
 
         <h1
           class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal reveal-delay-2"
         >
-          Creating <span class="gradient-text">exceptional</span><br />
-          digital experiences
+          Je développe des <span class="gradient-text">solutions web</span><br
+          />
+          fiables et modernes
         </h1>
 
         <p
           class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl reveal reveal-delay-3"
         >
-          I'm <span class="text-orange-500 font-medium">Alex Chen</span>, a full
-          stack developer specializing in crafting high-performance,
-          user-centered applications with modern technologies.
+          Je suis <span class="text-orange-500 font-medium">Boris Picard</span>,
+          développeur full stack. J’aime créer des outils web utiles,
+          performants et bien construits.
         </p>
 
         <div
           class="flex flex-col sm:flex-row gap-4 mb-12 reveal reveal-delay-4"
         >
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 border-none rounded-full px-8 py-6 group"
+          <a
+            href="mailto:picard.boris@outlook.fr"
+            target="_blank"
+            aria-label="Email"
+            rel="noopener noreferrer"
           >
-            <span>Get In Touch</span>
-            <ChevronRight
-              className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
-            />
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6"
-          >
-            View My Work
-          </Button>
+            <Button
+              className="border-orange-500/20 hover:bg-orange-500/10 rounded-full px-8 py-6"
+              size="lg"
+            >
+              <span>Me contacter</span>
+              <Mail
+                className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+              />
+            </Button>
+          </a>
+          <a href="#projects" aria-label="Mes projets">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6"
+            >
+              Voir mes projets
+            </Button>
+          </a>
         </div>
 
         <!-- Social Links -->
         <div class="flex flex-col items-center gap-6 reveal reveal-delay-4">
           <div class="flex items-center gap-2 text-sm text-foreground/60">
             <div class="w-8 h-[1px] bg-orange-500/30"></div>
-            <span>Follow me</span>
+            <span>Sur le web</span>
             <div class="w-8 h-[1px] bg-orange-500/30"></div>
           </div>
 
           <div class="flex items-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/Boris-Picard"
               class="group flex items-center justify-center w-12 h-12 rounded-full bg-orange-500/5 hover:bg-orange-500/10 transition-all duration-300"
               aria-label="GitHub Profile"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Github
                 className="w-5 h-5 text-foreground/60 group-hover:text-orange-500 transition-colors"
               />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/boris-picard-2906029b/"
               class="group flex items-center justify-center w-12 h-12 rounded-full bg-orange-500/5 hover:bg-orange-500/10 transition-all duration-300"
               aria-label="LinkedIn Profile"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Linkedin
-                className="w-5 h-5 text-foreground/60 group-hover:text-orange-500 transition-colors"
-              />
-            </a>
-            <a
-              href="mailto:alex@example.com"
-              class="group flex items-center justify-center w-12 h-12 rounded-full bg-orange-500/5 hover:bg-orange-500/10 transition-all duration-300"
-              aria-label="Email Contact"
-            >
-              <Mail
                 className="w-5 h-5 text-foreground/60 group-hover:text-orange-500 transition-colors"
               />
             </a>

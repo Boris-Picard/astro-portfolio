@@ -81,10 +81,10 @@ import { Image } from "astro:assets";
                   <div class="flex gap-4 pt-2">
                     {proj.github &&
                       proj.github.map(({ name, link }) => (
-                        <a href={link} target="_blank">
+                        <a href={link} target="_blank" rel="noopener noreferrer">
                           <Button
                             variant="outline"
-                            className="group transition-colors cursor-pointer rounded-full"
+                            className="group transition-colorsrounded-full"
                             style={{
                               borderColor: proj.theme.border,
                             }}
@@ -96,9 +96,9 @@ import { Image } from "astro:assets";
                       ))}
                     {proj.site &&
                       proj.site.map(({ name, link }) => (
-                        <a href={link} target="_blank">
+                        <a href={link} target="_blank" rel="noopener noreferrer">
                           <Button
-                            className="text-white border-none group cursor-pointer rounded-full hover:opacity-90 transition-opacity"
+                            className="text-white border-none grouprounded-full hover:opacity-90 transition-opacity"
                             style={{
                               background: proj.theme.gradient,
                             }}
