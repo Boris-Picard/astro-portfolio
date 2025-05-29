@@ -58,11 +58,13 @@ import { Badge } from "./ui/badge";
           </div>
           <div class="card-bg rounded-2xl p-8 relative z-10 text-center">
             <div class="relative mx-auto mb-6 w-32 h-32">
-              <div
-                class="w-full h-full rounded-full bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-500 flex items-center justify-center text-white text-4xl font-bold shadow-2xl"
-              >
-                AC
-              </div>
+               <Image  
+                src={profile.image}
+                alt={profile.name}
+                width={128}
+                height={128}
+                class="w-full h-full object-cover rounded-full"
+                        /> 
               {
                 profile.available && (
                   <div class="absolute -bottom-2 -right-2 flex items-center justify-center">
@@ -88,12 +90,14 @@ import { Badge } from "./ui/badge";
                 </div>
               )
             }
-            <Button
-              className="w-full bg-gradient-to-r from-orange-500 to-amber-600 border-none text-white group"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Download CV
-            </Button>
+            <a href={profile.cv} download>
+              <Button
+                className="w-full bg-gradient-to-r from-orange-500 to-amber-600 border-none text-white group rounded-full cursor-pointer"
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download CV
+              </Button>
+            </a>
           </div>
         </div>
 

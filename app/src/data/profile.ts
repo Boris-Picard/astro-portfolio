@@ -2,6 +2,8 @@ import type { ImageMetadata } from 'astro';
 import actimageLogo from '../assets/actimage_logo.jpg';
 import cesiLogo from '../assets/cesi_logo.png';
 import lamanuLogo from '../assets/la_manu_logo.png';
+import pp from "../assets/pp.jpg"
+import cv from "../assets/cv_boris_picard.pdf"
 
 export interface Institution {
     name: string;
@@ -46,6 +48,8 @@ export interface Profile {
     role: string;
     location: string;
     available: boolean;
+    image: ImageMetadata;
+    cv: string;
 }
 
 export const profile: Profile = {
@@ -53,6 +57,8 @@ export const profile: Profile = {
     role: "Développeur Full Stack",
     location: "Strasbourg, France",
     available: false,
+    image: pp,
+    cv: cv,
 };
 
 export const education: EducationItem[] = [
