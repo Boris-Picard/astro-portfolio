@@ -7,7 +7,11 @@ import ProjectSlider from "@/components/ui/ProjectSlider";
 import { cn } from "@/lib/utils";
 ---
 
-<section id="projects" class="py-32 relative overflow-hidden">
+<section
+  id="projects"
+  class="py-32 relative overflow-hidden"
+  aria-labelledby="projects-heading"
+>
   <div
     class="absolute inset-0 bg-gradient-to-bl from-orange-500/6 via-transparent to-amber-500/4"
   >
@@ -24,13 +28,16 @@ import { cn } from "@/lib/utils";
   <div class="max-w-7xl mx-auto px-4 relative z-10">
     <!-- Header -->
     <div class="text-center mb-20 reveal">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Featured Projects</h2>
+      <h2 id="projects-heading" class="text-4xl md:text-5xl font-bold mb-4">
+        Projets réalisés
+      </h2>
       <div
         class="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full mx-auto mb-8"
       >
       </div>
       <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-        A showcase of web applications I've built
+        Découvrez une sélection de projets web que j’ai développés, alliant
+        performance, accessibilité et bonnes pratiques.
       </p>
     </div>
 
@@ -47,7 +54,10 @@ import { cn } from "@/lib/utils";
               ({ name, link }) => name.trim() && link.trim()
             ) ?? [];
           return (
-            <div class="mb-32 reveal">
+            <article
+              class="mb-32 reveal"
+              aria-labelledby={`project-${idx}-title`}
+            >
               <div class="grid md:grid-cols-2 gap-16 items-center">
                 {/* Text block */}
                 <div
@@ -56,7 +66,7 @@ import { cn } from "@/lib/utils";
                   <div class="space-y-4">
                     <Badge
                       variant="outline"
-                      className="px-4 py-2 rounded-md"
+                      className="px-4 py-2 rounded-md text-sm"
                       style={{
                         borderColor: proj.theme.border,
                         color: proj.theme.primary,
@@ -65,7 +75,10 @@ import { cn } from "@/lib/utils";
                     >
                       {proj.type} Project
                     </Badge>
-                    <h3 class="text-2xl md:text-3xl font-bold leading-tight">
+                    <h3
+                      id={`project-${idx}-title`}
+                      class="text-2xl md:text-3xl font-bold leading-tight"
+                    >
                       {proj.title}
                     </h3>
                   </div>
@@ -75,7 +88,7 @@ import { cn } from "@/lib/utils";
                   <div class="flex flex-wrap gap-3">
                     {proj.techs.map((tech) => (
                       <Badge
-                        className="rounded-md"
+                        className="rounded-md text-sm"
                         style={{
                           backgroundColor: proj.techColors[tech].bgColor,
                           color: proj.techColors[tech].color,
@@ -133,30 +146,30 @@ import { cn } from "@/lib/utils";
                 {/* Image block */}
                 <div class={isFirst ? "md:order-2" : "md:order-1"}>
                   <ProjectSlider
-                    client:load
+                    client:visible
                     images={proj.gallery.length ? proj.gallery : [proj.image]}
                     theme={proj.theme}
                   />
                 </div>
               </div>
-            </div>
+            </article>
           );
         })
       }
     </div>
 
-    <!-- View All Projects Button -->
-    <div class="text-center mt-16 reveal">
+    <!-- <div class="text-center mt-16 reveal">
       <Button
+        title="Accéder à la liste complète des projets développés"
         variant="outline"
         size="lg"
         className="border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6 group"
       >
-        <span>View All Projects</span>
+        <span>Voir tous mes projets web</span>
         <ArrowRight
           className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
         />
       </Button>
-    </div>
+    </div> -->
   </div>
 </section>

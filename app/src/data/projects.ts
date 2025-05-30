@@ -1,9 +1,24 @@
-import test from "../assets/mountains-5173728_1280.jpg";
 import cesizen from "../assets/cesizen.png";
+import dashboard_cesizen from "../assets/dashboard_cesizen.png"
+import exercices_cesizen from "../assets/exercices_page.png"
+import exercice_cesizen_detail from "../assets/exercice_detail.png"
+import profile_cesizen from "../assets/profile_and_chatbot.png"
 import portfolio_view from "../assets/portfolio_view.png";
 import step1 from "../assets/step1.png";
 import step2 from "../assets/step2.png";
 import transaction from "../assets/transaction.png";
+import accueil from "../assets/accueil.png";
+import article from "../assets/article.png";
+import commentaires from "../assets/commentaires.png";
+import dashboard from "../assets/dashboard.png";
+import les_bons_plans from "../assets/les_bons_plans.png";
+import les_guides from "../assets/les_guides.png";
+import les_news from "../assets/les_news.png";
+import profile from "../assets/profile.png";
+import tous_les_guides from "../assets/tous_les_guides.png";
+import tous_les_jeux from "../assets/tous_les_jeux.png";
+import toutes_les_news from "../assets/toutes_les_news.png";
+
 
 export interface Links {
     name: string;
@@ -80,7 +95,7 @@ export const projects: Project[] = [
             }
         },
         image: cesizen,
-        gallery: [cesizen, test, test, test],
+        gallery: [cesizen, exercices_cesizen, exercice_cesizen_detail, profile_cesizen, dashboard_cesizen],
         theme: {
             primary: '#f97316',
             light: 'rgba(249, 115, 22, 0.1)',
@@ -216,8 +231,20 @@ export const projects: Project[] = [
                 borderColor: 'rgba(16, 185, 129, 0.3)'
             }
         },
-        image: test,
-        gallery: [test],
+        image: accueil,
+        gallery: [
+            accueil,
+            dashboard,
+            profile,
+            article,
+            commentaires,
+            les_news,
+            toutes_les_news,
+            les_guides,
+            tous_les_guides,
+            les_bons_plans,
+            tous_les_jeux
+        ],
         theme: {
             primary: '#f97316',
             light: 'rgba(249, 115, 22, 0.1)',
