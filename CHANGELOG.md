@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.0...astro-portfolio-v1.4.1) (2025-05-31)
+
+
+### Bug Fixes
+
+* components path ([69c7560](https://github.com/Boris-Picard/astro-portfolio/commit/69c7560cd6cae39d9c8b86b6535b1d0cdd9c14fd))
+
 ## [1.4.0](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.3.0...astro-portfolio-v1.4.0) (2025-05-31)
 
 
