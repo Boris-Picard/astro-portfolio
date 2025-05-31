@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.3.0...astro-portfolio-v1.4.0) (2025-05-31)
+
+
+### Features
+
+* added vercel workflow ([596b98b](https://github.com/Boris-Picard/astro-portfolio/commit/596b98bd781ee29c4374349f02b98de7d540cc99))
+
 ## [1.3.0](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.2.0...astro-portfolio-v1.3.0) (2025-05-31)
 
 
