@@ -8,12 +8,12 @@ import cv from "../assets/cv_boris_picard.pdf"
 export interface Institution {
     name: string;
     logo: ImageMetadata;
+    location: string;
 }
 
 export interface EducationItem {
     degree: string;
     period: string;
-    location: string;
     institution: Institution[];
     honors?: string;
     color: "orange" | "amber" | "yellow";
@@ -31,6 +31,7 @@ export interface HighlightsColumnItem {
 
 export interface Company {
     name: string;
+    location: string;
     logo: ImageMetadata;
 }
 
@@ -65,11 +66,11 @@ export const education: EducationItem[] = [
     {
         degree: "Concepteur Développeur d'Applications (Niveau 6)",
         period: "Sept. 2024 – En cours",
-        location: "Strasbourg",
         institution: [
             {
                 name: "CESI École d'Ingénieurs",
                 logo: cesiLogo,
+                location: "Strasbourg",
             }
         ],
         honors: "En alternance",
@@ -78,11 +79,11 @@ export const education: EducationItem[] = [
     {
         degree: "Développeur Web et Web Mobile (Niveau 5)",
         period: "Sept. 2023 - Mars 2024",
-        location: "Amiens",
         institution: [
             {
-                name: "LA MANU - Amiens",
+                name: "LA MANU",
                 logo: lamanuLogo,
+                location: "Amiens",
             }
         ],
         honors: "Diplôme obtenu",
@@ -100,6 +101,7 @@ export const experiences: ExperienceItem[] = [
         company: [{
             name: "Actimage (Alternance)",
             logo: actimageLogo,
+            location: "Strasbourg",
         }],
         period: "Sept. 2024 – Présent",
         description:
