@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.2.0...astro-portfolio-v1.3.0) (2025-05-31)
+
+
+### Features
+
+* added favicon & seo improvements ([3b1321f](https://github.com/Boris-Picard/astro-portfolio/commit/3b1321f175aad632eb8895b66e5a9c20eaf63505))
+
 ## [1.2.0](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.1.0...astro-portfolio-v1.2.0) (2025-05-31)
 
 
