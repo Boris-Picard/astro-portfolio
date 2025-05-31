@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.3](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.2...astro-portfolio-v1.4.3) (2025-05-31)
+
+
+### Bug Fixes
+
+* fixed glass navbar & hero layout ([#7](https://github.com/Boris-Picard/astro-portfolio/issues/7)) ([dfb3040](https://github.com/Boris-Picard/astro-portfolio/commit/dfb3040fb9492a8640bbf2a67e72a0a930698b82))
+
 ## [1.4.2](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.1...astro-portfolio-v1.4.2) (2025-05-31)
 
 
