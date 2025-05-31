@@ -33,6 +33,27 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Boris Picard",
+        "jobTitle": "Développeur full-stack",
+        "image": "https://boris-picard.com/app/assets/boris-picard.jpg",
+        "url": "https://boris-picard.com",
+        "email": "picard.boris@outlook.fr",
+        "sameAs": [
+          "https://github.com/Boris-Picard",
+          "https://www.linkedin.com/in/boris-picard-2906029b/"
+        ],
+        "knowsAbout": ["Symfony", "React", "Docker", "CI/CD", "PostgreSQL"]
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Strasbourg",
+          "addressCountry": "FR"
+        }
+      }
+    </script>
   </head>
   <body class="bg-background text-foreground antialiased">
     <slot />

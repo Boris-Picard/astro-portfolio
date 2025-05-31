@@ -2,7 +2,7 @@ import type { ImageMetadata } from 'astro';
 import actimageLogo from '../assets/actimage_logo.jpg';
 import cesiLogo from '../assets/cesi_logo.png';
 import lamanuLogo from '../assets/la_manu_logo.png';
-import pp from "../assets/pp.jpg"
+import pp from "../assets/boris-picard.jpg"
 import cv from "../assets/cv_boris_picard.pdf"
 
 export interface Institution {
