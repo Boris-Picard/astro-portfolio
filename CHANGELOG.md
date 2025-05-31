@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.4](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.3...astro-portfolio-v1.4.4) (2025-05-31)
+
+
+### Bug Fixes
+
+* meta & footer & cannonical ([#10](https://github.com/Boris-Picard/astro-portfolio/issues/10)) ([3cbc48d](https://github.com/Boris-Picard/astro-portfolio/commit/3cbc48d1a536aea418e14b17499e03c39536f4a7))
+
 ## [1.4.3](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.2...astro-portfolio-v1.4.3) (2025-05-31)
 
 
