@@ -1,0 +1,9 @@
+{
+  "release-type": "npm",
+  "packages": {
+    ".": {
+      "release-type": "npm",
+      "changelog-path": "CHANGELOG.md"
+    }
+  }
+}
