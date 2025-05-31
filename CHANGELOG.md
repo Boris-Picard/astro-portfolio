@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.1...astro-portfolio-v1.4.2) (2025-05-31)
+
+
+### Bug Fixes
+
+* added analytics ([c6814d0](https://github.com/Boris-Picard/astro-portfolio/commit/c6814d061f0996af313fddf3e10dd01f531a3f2e))
+
 ## [1.4.1](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.0...astro-portfolio-v1.4.1) (2025-05-31)
 
 
