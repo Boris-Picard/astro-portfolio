@@ -1,4 +1,5 @@
 ---
+import Analytics from "@/components/Analytics.astro";
 import "../styles/global.css";
 import { SEO } from "astro-seo";
 
@@ -11,7 +12,7 @@ export interface Props {
 
 const {
   title,
-  description = "Boris Picard – Développeur web full-stack en apprentissage continu, utilisant Symfony, React, TypeScript, Docker, PostgreSQL et FastAPI.",
+  description = "Boris Picard – Développeur full-stack passionné par la création de solutions web performantes et évolutives, avec une expertise en Symfony, React, Docker, CI/CD et PostgreSQL.",
   image = "https://boris-picard.com/assets/boris-picard.jpg",
   url = "https://boris-picard.com",
 } = Astro.props;
@@ -21,6 +22,7 @@ const {
 <html lang="fr" class="dark">
   <head>
     <meta charset="UTF-8" />
+    <meta name="google-site-verification" content={process.env.META_CONTENT} />
     <!-- SEO (title, meta, OG, Twitter) -->
     <SEO
       title={title}
@@ -71,6 +73,7 @@ const {
         }
       }
     </script>
+    <Analytics />
   </head>
   <body class="bg-background text-foreground antialiased">
     <slot />
