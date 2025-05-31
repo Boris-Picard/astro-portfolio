@@ -1,8 +1,8 @@
 {
-  "release-type": "npm",
+  "release-type": "node",
   "packages": {
     ".": {
-      "release-type": "npm",
+      "release-type": "node",
       "changelog-path": "CHANGELOG.md"
     }
   }
