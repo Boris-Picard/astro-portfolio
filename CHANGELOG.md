@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.5](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.4...astro-portfolio-v1.4.5) (2025-06-01)
+
+
+### Bug Fixes
+
+* blazerifle profile picture & package lock name ([#12](https://github.com/Boris-Picard/astro-portfolio/issues/12)) ([bf4a9a8](https://github.com/Boris-Picard/astro-portfolio/commit/bf4a9a8973f3ababfaabfccdd0c89f5cea7c46e4))
+
 ## [1.4.4](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.3...astro-portfolio-v1.4.4) (2025-05-31)
 
 
