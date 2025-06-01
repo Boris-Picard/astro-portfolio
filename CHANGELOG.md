@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.7](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.6...astro-portfolio-v1.4.7) (2025-06-01)
+
+
+### Bug Fixes
+
+* conventional tags added ([782ee89](https://github.com/Boris-Picard/astro-portfolio/commit/782ee89e19bde6e6f0bb79610fb9bec6764d7ab0))
+
 ## [1.4.6](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.5...astro-portfolio-v1.4.6) (2025-06-01)
 
 
