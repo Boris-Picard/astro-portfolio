@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.8](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.7...astro-portfolio-v1.4.8) (2025-06-10)
+
+
+### Bug Fixes
+
+* force release after astro update ([0d00f84](https://github.com/Boris-Picard/astro-portfolio/commit/0d00f84eb38506a72f9e69457967904816756e34))
+
 ## [1.4.7](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.6...astro-portfolio-v1.4.7) (2025-06-01)
 
 
