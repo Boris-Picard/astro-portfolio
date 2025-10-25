@@ -2,6 +2,7 @@ import type { ImageMetadata } from 'astro';
 import actimageLogo from '../assets/actimage_logo.jpg';
 import cesiLogo from '../assets/cesi_logo.png';
 import lamanuLogo from '../assets/la_manu_logo.png';
+import epitechLogo from '../assets/epitech.jpg';
 import pp from "../assets/boris-picard.jpg"
 import cv from "../assets/cv_boris_picard.pdf"
 
@@ -63,9 +64,21 @@ export const profile: Profile = {
 };
 
 export const education: EducationItem[] = [
+        {
+        degree: "Master of Science - spé IA & Bigdata (Niveau 7)",
+        period: "oct. 2025 – en cours",
+        institution: [
+            {
+                name: "Epitech",
+                logo: epitechLogo,
+                location: "Strasbourg",
+            }
+        ],
+        color: 'orange'
+    },
     {
         degree: "Concepteur Développeur d'Applications (Niveau 6)",
-        period: "Sept. 2024 – En cours",
+        period: "Sept. 2024 – Sept. 2025",
         institution: [
             {
                 name: "CESI École d'Ingénieurs",
@@ -73,7 +86,6 @@ export const education: EducationItem[] = [
                 location: "Strasbourg",
             }
         ],
-        honors: "En alternance",
         color: 'orange'
     },
     {
@@ -86,12 +98,12 @@ export const education: EducationItem[] = [
                 location: "Amiens",
             }
         ],
-        honors: "Diplôme obtenu",
         color: 'orange'
     },
 ];
 
 export const certifications: CertificationItem[] = [
+    { title: "Concepteur Développeur d'Applications (CDA) Niveau 6", year: "2025" },
     { title: "Développeur Web et Web Mobile (DWWM) Niveau 5", year: "2024" },
 ];
 
@@ -109,6 +121,7 @@ export const experiences: ExperienceItem[] = [
 
         highlights: [
             { name: "Drupal", color: "#0678BE" },
+            { name: "NuxtJS", color: "#00DC82" },
             { name: "Twig", color: "#CCBF00" },
             { name: "Symfony", color: "#6c6e73" },
             { name: "SCSS", color: "#CD6799" },
