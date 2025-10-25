@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.8...astro-portfolio-v1.5.0) (2025-10-25)
+
+
+### Features
+
+* **about:** about section maj ([d58898e](https://github.com/Boris-Picard/astro-portfolio/commit/d58898e45e8d84fa90b2542040e1d6b91a72e633))
+
 ## [1.4.8](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.4.7...astro-portfolio-v1.4.8) (2025-06-10)
 
 
