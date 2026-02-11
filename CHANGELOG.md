@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.5.1...astro-portfolio-v1.5.2) (2026-02-11)
+
+
+### Bug Fixes
+
+* **package:** audit npm & replaced cv ([511694d](https://github.com/Boris-Picard/astro-portfolio/commit/511694de06c63141317eecc7555adbdfc6f29d0f))
+
 ## [1.5.1](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.5.0...astro-portfolio-v1.5.1) (2025-12-13)
 
 
