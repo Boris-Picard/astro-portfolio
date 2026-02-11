@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.4](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.5.3...astro-portfolio-v1.5.4) (2026-02-11)
+
+
+### Bug Fixes
+
+* **cv:** name ([a8a4279](https://github.com/Boris-Picard/astro-portfolio/commit/a8a4279b83d13af36ff1b4656a7bce010ff05772))
+
 ## [1.5.3](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.5.2...astro-portfolio-v1.5.3) (2026-02-11)
 
 
