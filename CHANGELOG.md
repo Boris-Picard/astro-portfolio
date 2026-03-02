@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.5.4...astro-portfolio-v2.0.0) (2026-03-02)
+
+
+### ⚠ BREAKING CHANGES
+
+* refonte complete
+
+### Features
+
+* refonte complete ([e59aeb6](https://github.com/Boris-Picard/astro-portfolio/commit/e59aeb65a9c589a7888dd65cb6d36f095bd5ef7b))
+
 ## [1.5.4](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v1.5.3...astro-portfolio-v1.5.4) (2026-02-11)
 
 
