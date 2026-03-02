@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v2.0.2...astro-portfolio-v2.0.3) (2026-03-02)
+
+
+### Bug Fixes
+
+* font regression ([89ddc5d](https://github.com/Boris-Picard/astro-portfolio/commit/89ddc5daf353a9013d551114a3c038fc016440ca))
+
 ## [2.0.2](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v2.0.1...astro-portfolio-v2.0.2) (2026-03-02)
 
 
