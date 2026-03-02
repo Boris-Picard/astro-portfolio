@@ -10,13 +10,14 @@ const navItems = [
 ];
 ---
 
-<header id="site-header" class="site-header fixed inset-x-0 top-0 z-30 px-3 pt-3 sm:px-4 md:px-6 md:pt-4">
+<header id="site-header" class="site-header fixed inset-x-0 top-0 z-30 pt-3 md:pt-4">
   <div class="section-wrap">
     <div class="nav-shell rounded-[1.1rem] px-3 sm:px-4 md:px-5">
       <nav class="grid h-14 grid-cols-[auto_1fr_auto] items-center gap-3 sm:h-16 md:h-[72px] md:gap-5" aria-label="Navigation principale">
         <a href="#hero" class="on-ink inline-flex items-center gap-2 text-sm md:text-base">
           <span class="on-ink-soft inline-flex h-7 w-7 items-center justify-center rounded-full border border-[color:var(--ink-panel-border)] text-[11px] font-medium">BP</span>
-          <span class="font-medium tracking-tight">Boris Picard</span>
+          <span class="font-medium tracking-tight min-[431px]:hidden">Boris</span>
+          <span class="font-medium tracking-tight max-[430px]:hidden">Boris Picard</span>
         </a>
 
         <div class="hidden items-center justify-center gap-7 lg:flex">
@@ -29,7 +30,7 @@ const navItems = [
           }
         </div>
 
-        <div class="ml-auto flex shrink-0 items-center justify-end gap-2 sm:gap-3">
+        <div class="ml-auto flex shrink-0 items-center justify-end gap-1.5 sm:gap-3">
           <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Basculer le thème" aria-pressed="false">
             <span class="theme-toggle-icon" aria-hidden="true">
               <svg class="theme-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -43,7 +44,7 @@ const navItems = [
             <span id="theme-label" class="hidden sm:inline">Clair</span>
           </button>
 
-          <a href={pdf} download class="nav-cv hidden lg:inline-flex">
+          <a href={pdf} download class="nav-cv hidden xl:inline-flex">
             <span>CV</span>
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true">
               <path d="M12 4v10"></path>

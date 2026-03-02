@@ -22,14 +22,14 @@ const descriptions: Record<string, string> = {
 
     {
       skillColumns.length > 0 ? (
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-7">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-7">
           {
             skillColumns.map((column, idx) => {
               const isWide = idx === 0 || idx === 2;
               return (
                 <article
                   class={`reveal rounded-[1.55rem] border border-[color:var(--surface-border)] bg-[color:var(--surface)] p-5 md:p-6 ${
-                    isWide ? "md:col-span-7" : "md:col-span-5"
+                    isWide ? "lg:col-span-7" : "lg:col-span-5"
                   }`}
                   style={`--stagger:${idx + 1};`}
                 >
