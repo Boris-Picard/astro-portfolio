@@ -1,360 +1,143 @@
 ---
-import { buttonVariants } from "@/components/ui/button";
-import {
-  Calendar,
-  MapPin,
-  GraduationCap,
-  Briefcase,
-  Award,
-  Download,
-  BookOpen,
-} from "lucide-react";
-import {
-  profile,
-  education,
-  certifications,
-  experiences,
-} from "@/data/profile";
 import { Image } from "astro:assets";
-import { cn } from "@/lib/utils";
+import { education, certifications, experiences } from "@/data/profile";
+import { normalizeTone } from "@/lib/color";
+
+const currentExperience = experiences[0];
 ---
 
-<section id="about" class="py-32 relative overflow-hidden">
-  <!-- Background -->
-  <div
-    class="absolute inset-0 bg-gradient-to-br from-orange-500/6 via-transparent to-amber-500/4"
-  >
-  </div>
-  <div
-    class="absolute inset-0 bg-gradient-to-tl from-yellow-500/3 via-transparent to-orange-500/5"
-  >
-  </div>
-  <div
-    class="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-gradient-to-br from-orange-500/10 to-amber-500/6 blur-3xl"
-  >
-  </div>
-
-  <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <!-- Header -->
-    <div class="text-center mb-20 reveal">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">À propos</h2>
-      <div
-        class="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full mx-auto mb-8"
-      >
-      </div>
-      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-        Je conçois des applications web robustes et modernes. Curieux et
-        impliqué, j’avance entre projet pro et montée en compétences continue.
+<section id="about" class="section-block">
+  <div class="section-wrap">
+    <header class="section-head reveal" style="--stagger:0;">
+      <p class="eyebrow">Présentation</p>
+      <h2 class="display-section max-w-[9ch]">Un parcours orienté impact.</h2>
+      <p class="copy max-w-[64ch]">
+        Je combine pratique en entreprise et formation continue pour produire des applications web fiables, compréhensibles et adaptées aux contraintes métier.
       </p>
-    </div>
+    </header>
 
-    <div class="grid lg:grid-cols-3 gap-8">
-      <div class="lg:col-span-1 space-y-8">
-        <!-- Profile Card -->
-        <div class="glass rounded-2xl p-[1px] overflow-hidden reveal">
-          <div
-            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-400 to-transparent opacity-20 blur-sm"
-          >
-          </div>
-          <div class="card-bg rounded-2xl p-8 relative z-10 text-center">
-            <div class="relative mx-auto mb-6 w-32 h-32">
-              <Image
-                src={profile.image}
-                alt={profile.name}
-                width={128}
-                height={128}
-                class="w-full h-full object-cover rounded-full"
-              />
-              {
-                profile.available && (
-                  <div class="absolute -bottom-2 -right-2 flex items-center justify-center">
-                    <span class="absolute inline-flex h-8 w-8 rounded-full bg-green-400 opacity-50 animate-ping" />
-                    <span class="relative inline-flex h-3 w-3 rounded-full bg-green-500 shadow-lg" />
-                  </div>
-                )
-              }
-            </div>
-            <h3 class="text-xl font-bold mb-2">{profile.name}</h3>
-            <p class="text-orange-500 font-medium mb-2">{profile.role}</p>
-            <div
-              class="flex items-center justify-center gap-2 text-sm text-muted-foreground mb-6"
-            >
-              <MapPin className="w-4 h-4" />
-              <span>{profile.location}</span>
-            </div>
-            {
-              profile.available && (
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 text-sm font-medium mb-6">
-                  <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                  Available for new opportunities
-                </div>
-              )
-            }
-            <a
-              href={profile.cv}
-              download
-              class={cn(
-                buttonVariants({ variant: "default", size: "default" }),
-                "w-50 bg-gradient-to-r from-orange-500 to-amber-600 border-none text-white group rounded-full"
-              )}
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Télécharger mon CV
-            </a>
-          </div>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-[1.06fr_0.94fr] md:gap-10">
+      <article class="reveal" style="--stagger:1;">
+        <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Parcours</p>
+        <h3 class="mt-2 text-3xl tracking-tight md:text-5xl">Du terrain vers l’architecture.</h3>
+
+        <div class="mt-6 space-y-5 text-sm leading-relaxed text-muted md:text-base">
+          <p>
+            Mon parcours a débuté par une formation de <strong>Développeur Web</strong> à <strong>LA MANU</strong>, où j'ai appris les fondamentaux : HTML, CSS, JavaScript, PHP et SQL. Curieux d'aller plus loin, je me suis formé en autodidacte sur des frameworks et technologies comme Symfony, React, Next.js, Express et MongoDB, ainsi que sur des outils DevOps comme Docker et GitHub Actions.
+          </p>
+          <p>
+            Cette polyvalence m'a permis de rejoindre <strong>Actimage</strong> en alternance. J'y ai travaillé sur des projets concrets, principalement avec Drupal et PHP, ainsi que sur un projet utilisant Nuxt.js, une expérience qui m'a beaucoup appris sur les réalités du développement en entreprise. Ce parcours a été validé par l'obtention de mon diplôme de <strong>Concepteur Développeur d’Applications</strong> au CESI.
+          </p>
+          <p>
+            Aujourd'hui, je poursuis ma montée en compétences avec un <strong>Master of Science</strong> à <strong>Epitech</strong>, spécialisé en <strong>IA & Big Data</strong>. Je me concentre sur l'apprentissage automatique et la science des données pour concevoir des solutions applicables en production.
+          </p>
         </div>
+      </article>
 
-        <!-- Education & Certifications -->
-        <div
-          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-1"
-        >
-          <div
-            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-20 blur-sm"
-          >
-          </div>
-          <div class="card-bg rounded-2xl p-8 relative z-10">
-            <div class="flex items-center gap-4 mb-6">
-              <div
-                class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-amber-500 flex items-center justify-center shadow-lg"
-              >
-                <GraduationCap className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold">Formation</h3>
-                <p class="text-sm text-muted-foreground">Parcours académique</p>
-              </div>
-            </div>
-            <div class="space-y-4">
+      <article class="ink-block rounded-[1.8rem] p-6 md:p-7 reveal" style="--stagger:2;">
+        <p class="on-ink-muted font-mono text-[11px] uppercase tracking-[0.16em]">Expérience en cours</p>
+
+        {
+          currentExperience ? (
+            <div class="mt-4">
+              <h3 class="on-ink text-2xl tracking-tight md:text-4xl">{currentExperience.title}</h3>
+
               {
-                education.map((edu) => (
-                  <div class="p-4 bg-muted-custom rounded-lg border border-amber-500/10 hover:border-amber-500/20 transition-colors">
-                    <div class="flex items-center justify-between mb-2">
-                      <h4 class="font-semibold text-sm">{edu.degree}</h4>
-                      <div
-                        class={`flex items-center gap-2 text-end text-xs text-${edu.color}-500 bg-${edu.color}-500/10`}
-                      >
-                        {edu.period}
-                      </div>
+                currentExperience.company.map((company) => (
+                  <div class="on-ink-soft mt-4 flex items-center justify-between gap-3 text-sm">
+                    <div class="flex items-center gap-2">
+                      <Image src={company.logo} alt={company.name} width={18} height={18} class="h-[18px] w-[18px] object-contain" />
+                      <span>{company.name}</span>
                     </div>
-                    {edu.institution.map(({ name, logo, location }) => {
-                      return (
-                        <div class="flex mb-2 justify-between items-center">
-                          <div class="flex gap-2 items-center">
-                            <Image
-                              src={logo}
-                              alt={`${name} logo`}
-                              class="w-5 h-5 object-contain"
-                            />
-                            <span class="text-xs font-medium text-center">
-                              {name}
-                            </span>
-                          </div>
-                          <div class="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            <span class="text-xs">{location}</span>
-                          </div>
-                        </div>
-                      );
-                    })}
-                    {edu.honors && (
-                      <p class="text-muted-foreground text-xs">{edu.honors}</p>
-                    )}
+                    <span>{company.location}</span>
                   </div>
                 ))
               }
 
-              <div>
-                <div class="flex items-center gap-2 mb-3">
-                  <Award className="w-4 h-4 text-orange-500" />
-                  <h4 class="font-semibold text-sm">Diplômes obtenus</h4>
-                </div>
-                <div class="space-y-2">
+              <p class="on-ink-muted mt-2 font-mono text-[11px] uppercase tracking-[0.16em]">{currentExperience.period}</p>
+              <p class="on-ink-soft mt-4 text-sm leading-relaxed">{currentExperience.description}</p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                {
+                  currentExperience.highlights.map((item) => {
+                    const tone = normalizeTone(item.color);
+                    return (
+                      <span
+                        class="rounded-full border px-3 py-1 text-xs"
+                        style={`--tone:${tone};border-color:color-mix(in srgb, var(--tone) 56%, transparent);color:var(--tone);`}
+                      >
+                        {item.name}
+                      </span>
+                    );
+                  })
+                }
+              </div>
+            </div>
+          ) : (
+            <div class="on-ink-soft mt-5 text-sm">Aucune expérience professionnelle renseignée.</div>
+          )
+        }
+      </article>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-[1.02fr_0.98fr] md:gap-10">
+      <article class="reveal" style="--stagger:3;">
+        <div class="rule"></div>
+        <p class="mt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Formation</p>
+
+        <div class="mt-4 divide-y divide-[color:var(--surface-border)]">
+          {
+            education.length > 0 ? (
+              education.map((edu) => (
+                <div class="py-4">
+                  <div class="flex flex-wrap items-start justify-between gap-3">
+                    <p class="max-w-[78%] text-sm font-medium leading-snug md:text-base">{edu.degree}</p>
+                    <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">{edu.period}</span>
+                  </div>
+
                   {
-                    certifications.map((cert) => (
-                      <div class="flex items-center justify-between p-3 bg-muted-custom rounded-lg border border-orange-500/10 hover:border-orange-500/20 transition-colors group">
-                        <span class="text-xs font-medium">{cert.title}</span>
-                        <span class="text-xs text-orange-500">{cert.year}</span>
+                    edu.institution.map((inst) => (
+                      <div class="mt-2 flex items-center justify-between gap-3 text-xs text-muted md:text-sm">
+                        <div class="flex items-center gap-2">
+                          <Image src={inst.logo} alt={inst.name} width={18} height={18} class="h-[18px] w-[18px] object-contain" />
+                          <span>{inst.name}</span>
+                        </div>
+                        <span>{inst.location}</span>
                       </div>
                     ))
                   }
                 </div>
-              </div>
-            </div>
-          </div>
+              ))
+            ) : (
+              <div class="py-4 text-sm text-muted">Aucun élément de formation pour le moment.</div>
+            )
+          }
         </div>
-      </div>
+      </article>
 
-      <div class="lg:col-span-2 space-y-8">
-        <!-- My Story -->
-        <div
-          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-2"
-        >
-          <div
-            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-orange-400 to-transparent opacity-20 blur-sm"
-          >
-          </div>
-          <div class="card-bg rounded-2xl p-8 relative z-10">
-            <div class="flex items-center gap-4 mb-6">
-              <div
-                class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-500 flex items-center justify-center shadow-lg"
-              >
-                <BookOpen className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold">Mon Parcours</h3>
-                <p class="text-sm text-muted-foreground">
-                  Un chemin vers le développement professionnel
-                </p>
-              </div>
-            </div>
-            <div class="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Mon parcours a débuté par une formation de
-                <span class="text-orange-500 font-medium"
-                  >Développeur Web</span
-                > à <span class="text-orange-500 font-medium">LA MANU</span>,
-                où j'ai appris les fondamentaux :
-                <span class="text-orange-500 font-medium">HTML</span>,
-                <span class="text-orange-500 font-medium">CSS</span>,
-                <span class="text-orange-500 font-medium">JavaScript</span>,
-                <span class="text-orange-500 font-medium">PHP</span> et
-                <span class="text-orange-500 font-medium">SQL</span>. Curieux
-                d'aller plus loin, je me suis formé en autodidacte sur des
-                frameworks et technologies comme
-                <span class="text-orange-500 font-medium">Symfony</span>,
-                <span class="text-orange-500 font-medium">React</span>,
-                <span class="text-orange-500 font-medium">Next.js</span>,
-                <span class="text-orange-500 font-medium">Express</span> et
-                <span class="text-orange-500 font-medium">MongoDB</span>, ainsi
-                que sur des outils DevOps comme
-                <span class="text-orange-500 font-medium">Docker</span> et
-                <span class="text-orange-500 font-medium">GitHub Actions</span
-                >.
-              </p>
-              <p>
-                Cette polyvalence m'a permis de rejoindre
-                <span class="text-orange-500 font-medium">Actimage</span> en
-                alternance. J'y ai travaillé sur des projets concrets,
-                principalement avec
-                <span class="text-orange-500 font-medium">Drupal</span> et
-                <span class="text-orange-500 font-medium">PHP</span>, ainsi que
-                sur un projet utilisant
-                <span class="text-orange-500 font-medium">Nuxt.js</span>, une
-                expérience qui m'a beaucoup appris sur les réalités du
-                développement en entreprise. Ce parcours a été validé par
-                l'obtention de mon diplôme de
-                <span class="text-orange-500 font-medium"
-                  >Concepteur Développeur d’Applications</span
-                > au <span class="text-orange-500 font-medium">CESI</span>.
-              </p>
-              <p>
-                Aujourd'hui, je poursuis ma montée en compétences avec un
-                <span class="text-orange-500 font-medium"
-                  >Master of Science</span
-                > à <span class="text-orange-500 font-medium">Epitech</span>,
-                spécialisé en
-                <span class="text-orange-500 font-medium"
-                  >IA & Big Data</span
-                >. Passionné par le potentiel de l'intelligence artificielle,
-                je me concentre sur l'apprentissage des concepts du machine
-                learning et de la data science pour construire les solutions
-                innovantes de demain.
-              </p>
-            </div>
-          </div>
+      <article class="reveal" style="--stagger:4;">
+        <div class="rule"></div>
+        <p class="mt-5 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Diplômes</p>
+
+        <div class="mt-4 divide-y divide-[color:var(--surface-border)]">
+          {
+            certifications.length > 0 ? (
+              certifications.map((cert) => (
+                <div class="flex items-center justify-between gap-3 py-4 text-sm md:text-base">
+                  <span class="max-w-[74%] leading-snug">{cert.title}</span>
+                  <span class="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">{cert.year}</span>
+                </div>
+              ))
+            ) : (
+              <div class="py-4 text-sm text-muted">Aucune certification renseignée.</div>
+            )
+          }
         </div>
 
-        <!-- Professional Experience -->
-        <div
-          class="glass rounded-2xl p-[1px] overflow-hidden reveal reveal-delay-3"
-        >
-          <div
-            class="absolute -inset-[1px] bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-20 blur-sm"
-          >
-          </div>
-          <div class="card-bg rounded-2xl p-8 relative z-10">
-            <div class="flex items-center gap-4 mb-8">
-              <div
-                class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center shadow-lg"
-              >
-                <Briefcase className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold">
-                  Expérience professionnelle
-                </h3>
-                <p class="text-sm text-muted-foreground">
-                  Parcours et évolutions
-                </p>
-              </div>
-            </div>
-            <div class="space-y-6">
-              {
-                experiences.map((exp) => (
-                  <div class="relative flex gap-6">
-                    <div class="flex flex-col items-center">
-                      <div
-                        class={`w-4 h-4 rounded-full bg-${exp.color}-500 border-2 border-background shadow-lg`}
-                      />
-                      <div
-                        class={`w-px h-16 bg-gradient-to-b from-${exp.color}-500 to-${exp.color}-300 mt-2`}
-                      />
-                    </div>
-                    <div class="flex-1">
-                      <div class="flex items-center justify-between mb-2">
-                        <h4 class="font-semibold">{exp.title}</h4>
-                        <div
-                          class={`flex text-end items-center gap-2 text-xs text-${exp.color}-500 bg-${exp.color}-500/10 py-1 rounded-full`}
-                        >
-                          <span>{exp.period}</span>
-                        </div>
-                      </div>
-                      <div
-                        class={`flex items-center text-${exp.color}-500 text-sm font-medium mb-3 gap-2`}
-                      >
-                        {exp.company.map(({ name, logo, location }) => (
-                          <div class="flex items-center justify-between w-full">
-                            <div class="flex items-center gap-2">
-                              <Image
-                                src={logo}
-                                alt={`${name} logo`}
-                                class="w-5 h-5 object-contain"
-                              />
-                              <span class="text-black dark:text-white">
-                                {name}
-                              </span>
-                            </div>
-                            <div class="flex items-center gap-1 text-right">
-                              <MapPin className="w-4 h-4" />
-                              <span>{location}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      <p class="text-muted-foreground text-sm leading-relaxed mb-3">
-                        {exp.description}
-                      </p>
-                      <div class="flex flex-wrap gap-2">
-                        {exp.highlights.map((h) => (
-                          <div class="flex items-center gap-1">
-                            <div
-                              class="w-2 h-2 rounded-full"
-                              style={{ backgroundColor: h.color }}
-                            />
-                            <span class="text-xs text-muted-foreground">
-                              {h.name}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
-        </div>
-      </div>
+        <p class="mt-6 max-w-[52ch] text-sm leading-relaxed text-muted">
+          Cap actuel : Master IA & Big Data en cours, avec mise en pratique continue sur des cas d’usage web concrets.
+        </p>
+      </article>
     </div>
   </div>
 </section>

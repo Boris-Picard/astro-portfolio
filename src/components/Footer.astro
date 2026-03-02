@@ -1,144 +1,63 @@
----
-import { Github, Linkedin, Mail, ArrowUp, Heart } from "lucide-react";
----
-
-<footer
-  class="py-16 relative overflow-hidden border-t border-border/20"
-  aria-labelledby="Informations complémentaires du site"
-  role="contentinfo"
->
-  <!-- Dégradés décoratifs -->
-  <div
-    class="absolute inset-0 bg-gradient-to-t from-orange-500/8 via-transparent to-transparent"
-  >
-  </div>
-  <div
-    class="absolute inset-0 bg-gradient-to-br from-orange-500/6 via-transparent to-amber-500/4"
-  >
-  </div>
-  <div
-    class="absolute inset-0 bg-gradient-to-tl from-yellow-500/3 via-transparent to-orange-500/4"
-  >
-  </div>
-
-  <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <div class="grid md:grid-cols-3 gap-8 justify-center md:justify-between">
-      <!-- Identité & Présentation -->
-      <div class="md:col-span-1">
-        <h2 id="footer-title" class="sr-only">Pied de page du site</h2>
-        <div class="text-2xl font-bold mb-4">
-          <span
-            class="bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-500 bg-clip-text text-transparent"
-          >
-            Boris Picard
-          </span>
+<footer class="relative overflow-hidden pb-12 pt-16 md:pt-20">
+  <div class="footer-atmo" aria-hidden="true"></div>
+  <div class="section-wrap relative z-[1]">
+    <div class="ink-block rounded-[1.8rem] p-6 md:p-8">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+        <div>
+          <p class="on-ink text-2xl tracking-tight md:text-3xl">Boris Picard</p>
+          <p class="on-ink-soft mt-3 max-w-[58ch] text-sm leading-relaxed md:text-base">
+            Développeur full stack à Strasbourg. Je conçois des applications web solides, maintenables et pensées pour des usages concrets.
+          </p>
         </div>
-        <p class="text-muted-foreground text-sm leading-relaxed mb-6">
-          Développeur full-stack passionné par la création d’expériences web
-          soignées et efficaces. J’aime concevoir des solutions robustes et
-          accessibles pour répondre aux vrais besoins.
-        </p>
+
+        <div class="flex flex-wrap justify-start gap-3 md:justify-end">
+          <a href="#projects" class="btn-ink rounded-full px-5 py-2.5 text-sm font-medium">Voir les projets</a>
+          <a href="#contact" class="btn-primary">Me contacter</a>
+        </div>
       </div>
 
-      <!-- Liens de navigation -->
-      <nav
-        class="md:col-span-1"
-        aria-label="Liens vers les sections principales du site"
-      >
-        <h3 class="font-semibold experience-title mb-4">Navigation</h3>
-        <div class="space-y-3">
-          <a
-            href="#about"
-            class="block text-sm text-muted-foreground hover:text-orange-500 transition-colors"
-          >
-            À propos
+      <div class="my-7 border-t border-[color:var(--ink-panel-border)]"></div>
+
+      <div class="grid grid-cols-1 gap-8 text-sm md:grid-cols-3">
+        <nav class="space-y-2" aria-label="Navigation de pied de page">
+          <p class="on-ink-muted font-mono text-[11px] uppercase tracking-[0.16em]">Navigation</p>
+          <a class="link-orange block w-fit on-ink-soft" href="#hero">Accueil</a>
+          <a class="link-orange block w-fit on-ink-soft" href="#about">Présentation</a>
+          <a class="link-orange block w-fit on-ink-soft" href="#skills">Compétences</a>
+          <a class="link-orange block w-fit on-ink-soft" href="#projects">Projets</a>
+          <a class="link-orange block w-fit on-ink-soft" href="#contact">Contact</a>
+        </nav>
+
+        <div class="space-y-2">
+          <p class="on-ink-muted font-mono text-[11px] uppercase tracking-[0.16em]">Profils</p>
+          <a class="link-orange block w-fit on-ink-soft" href="mailto:picard.boris@outlook.fr" target="_blank" rel="noopener noreferrer">
+            picard.boris@outlook.fr
           </a>
-          <a
-            href="#projects"
-            class="block text-sm text-muted-foreground hover:text-amber-500 transition-colors"
-          >
-            Projets
+          <a class="link-orange block w-fit on-ink-soft" href="https://github.com/Boris-Picard" target="_blank" rel="noopener noreferrer">
+            github.com/Boris-Picard
           </a>
-          <a
-            href="#skills"
-            class="block text-sm text-muted-foreground hover:text-yellow-500 transition-colors"
-          >
-            Compétences
-          </a>
-          <a
-            href="#contact"
-            class="block text-sm text-muted-foreground hover:text-orange-600 transition-colors"
-          >
-            Contact
+          <a class="link-orange block w-fit on-ink-soft" href="https://www.linkedin.com/in/boris-picard" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/boris-picard
           </a>
         </div>
-      </nav>
 
-      <!-- Coordonnées & Réseaux -->
-      <section
-        class="md:col-span-1"
-        aria-label="Coordonnées et réseaux sociaux"
-      >
-        <h3 class="font-semibold experience-title mb-4">Réseaux</h3>
-        <div class="space-y-4">
-          <div class="flex items-center gap-3">
-            <Mail className="w-4 h-4 text-orange-500" aria-hidden="true" />
-            <a
-              href="mailto:picard.boris@outlook.fr"
-              aria-label="Envoyer un email à Boris Picard"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-muted-foreground hover:text-orange-500 transition-colors"
-            >
-              picard.boris@outlook.fr
-            </a>
-          </div>
-          <div class="flex items-center gap-3">
-            <Linkedin className="w-4 h-4 text-amber-500" aria-hidden="true" />
-            <a
-              href="https://linkedin.com/in/boris-picard-2906029b"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Profil LinkedIn de Boris Picard"
-              class="text-sm text-muted-foreground hover:text-amber-500 transition-colors"
-            >
-              linkedin.com/in/boris-picard
-            </a>
-          </div>
-          <div class="flex items-center gap-3">
-            <Github className="w-4 h-4 text-yellow-500" aria-hidden="true" />
-            <a
-              href="https://github.com/Boris-Picard"
-              aria-label="Profil GitHub de Boris Picard"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-muted-foreground hover:text-yellow-500 transition-colors"
-            >
-              github.com/Boris-Picard
-            </a>
-          </div>
+        <div class="space-y-2">
+          <p class="on-ink-muted font-mono text-[11px] uppercase tracking-[0.16em]">Disponibilité</p>
+          <p class="on-ink-soft">Strasbourg, France</p>
+          <p class="on-ink-soft">Missions à distance ou hybrides</p>
+          <p class="on-ink-soft">Réponse sous 24h en moyenne</p>
         </div>
-      </section>
-    </div>
+      </div>
 
-    <!-- Bas de page -->
-    <div
-      class="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 pt-8 border-t border-border/20"
-    >
-      <p class="text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} Boris Picard. Tous droits réservés.
-      </p>
-      <a
-        href="#hero"
-        class="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 transition-colors group"
-        aria-label="Retour en haut de page"
-      >
-        <span>Retour en haut</span>
-        <ArrowUp
-          className="w-4 h-4 transition-transform group-hover:-translate-y-1"
-          aria-hidden="true"
-        />
-      </a>
+      <div class="mt-8 flex flex-col gap-3 border-t border-[color:var(--ink-panel-border)] pt-4 text-sm md:flex-row md:items-center md:justify-between">
+        <p class="on-ink-faint">&copy; {new Date().getFullYear()} Boris Picard. Tous droits réservés.</p>
+        <a href="#hero" class="link-orange on-ink-soft inline-flex items-center gap-2">
+          Retour en haut
+          <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="m6 15 6-6 6 6" />
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </footer>

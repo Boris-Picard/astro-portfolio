@@ -1,144 +1,122 @@
 ---
-import { buttonVariants } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ChevronRight, Github, Linkedin, Mail } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Image } from "astro:assets";
+import { profile } from "@/data/profile";
 ---
 
-<section
-  id="hero"
-  class="min-h-screen py-32 flex items-center justify-center relative overflow-hidden"
->
-  <!-- Refined subtle yet impactful gradient background -->
-  <div class="absolute inset-0">
-    <!-- Primary subtle mesh gradient -->
-    <div
-      class="absolute inset-0 bg-gradient-to-br from-orange-500/6 via-transparent to-amber-500/4"
-    >
-    </div>
-    <!-- Secondary depth layer -->
-    <div
-      class="absolute inset-0 bg-gradient-to-tr from-rose-500/3 via-transparent to-orange-500/5"
-    >
-    </div>
-    <!-- Radial focus gradient -->
-    <div
-      class="absolute inset-0 bg-radial-gradient from-orange-500/8 via-transparent to-transparent opacity-60"
-    >
-    </div>
-    <!-- Animated subtle orbs -->
-    <div
-      class="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-orange-500/8 via-amber-400/4 to-transparent blur-3xl animate-pulse opacity-70"
-    >
-    </div>
-    <div
-      class="absolute bottom-1/3 right-1/4 w-64 h-64 rounded-full bg-gradient-to-tl from-rose-500/6 via-orange-500/4 to-transparent blur-3xl animate-pulse delay-1000 opacity-50"
-    >
-    </div>
-  </div>
+<section id="hero" class="min-h-[100dvh] pt-32 pb-16 sm:pt-36 md:pt-40 md:pb-20 lg:pt-44">
+  <div class="section-wrap">
+    <div class="rule"></div>
 
-  <!-- Decorative grid with hero-specific styling -->
-  <div
-    class="absolute inset-0 grid grid-cols-6 grid-rows-6 pointer-events-none opacity-10"
-  >
-    {
-      Array(36)
-        .fill(0)
-        .map((_, i) => <div class="border-[0.5px] border-orange-500/[0.03]" />)
-    }
-  </div>
+    <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-10">
+      <article class="reveal" style="--stagger:0;">
+        <div class="flex flex-wrap items-center gap-3">
+          <p class="eyebrow">Boris Picard</p>
+          <p class="inline-flex items-center gap-2 rounded-full border border-[color:var(--surface-border)] px-3 py-1 text-[11px] uppercase tracking-[0.14em] text-muted">
+            <span class="h-1.5 w-1.5 rounded-full bg-[color:var(--accent-solid)]"></span>
+            Disponible
+          </p>
+        </div>
 
-  <div class="max-w-7xl mx-auto px-4 relative z-10 w-full">
-    <div class="min-h-[calc(100vh-8rem)] flex items-center justify-center">
-      <div class="flex flex-col items-center text-center w-full">
-        <Badge
-          variant="outline"
-          className="mb-6 border-orange-500/30 text-orange-500 bg-orange-500/5 reveal reveal-delay-1"
-        >
-          Développeur Full Stack
-        </Badge>
-
-        <h1
-          class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight reveal reveal-delay-2"
-        >
-          Je développe des <span class="gradient-text">solutions web</span><br
-          />
-          fiables et modernes
+        <h1 class="display-hero max-w-[12ch]">
+          Je conçois
+          <br />
+          des produits
+          <br />
+          web durables.
         </h1>
 
-        <p
-          class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl reveal reveal-delay-3"
-        >
-          Je suis <span class="text-orange-500 font-medium">Boris Picard</span>,
-          développeur full stack. J’aime créer des outils web utiles,
-          performants et bien construits.
+        <p class="copy max-w-[58ch]">
+          Développeur full stack orienté architecture logicielle. Je conçois des applications robustes, testables et maintenables, de l’interface utilisateur jusqu’au déploiement.
         </p>
 
-        <div
-          class="flex flex-col sm:flex-row gap-4 mb-12 reveal reveal-delay-4"
-        >
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="btn-primary">Voir mes projets</a>
+          <a href="#contact" class="btn-secondary">Discuter d’un projet</a>
+        </div>
+
+        <div class="mt-9 border-t border-[color:var(--surface-border)] pt-6">
+          <p class="max-w-[52ch] text-sm text-muted">
+            Architecture claire, exécution soignée, approche orientée produit.
+          </p>
+          <p class="mt-2 font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+            Symfony · React · TypeScript · PostgreSQL · Docker
+          </p>
+        </div>
+
+        <div class="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
+          <a
+            href="https://github.com/Boris-Picard"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            class="link-orange inline-flex items-center gap-2 text-sm text-muted"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.9a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 19.1 4.8 5.07 5.07 0 0 0 19 1s-1.18-.35-3.9 1.48a13.38 13.38 0 0 0-7 0C5.38.65 4.2 1 4.2 1A5.07 5.07 0 0 0 4.1 4.8a5.44 5.44 0 0 0-1.46 3.7c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 8 17.1V21" />
+            </svg>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/boris-picard"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="link-orange inline-flex items-center gap-2 text-sm text-muted"
+          >
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" rx="1" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            LinkedIn
+          </a>
           <a
             href="mailto:picard.boris@outlook.fr"
             target="_blank"
-            aria-label="Email"
             rel="noopener noreferrer"
-            class={cn(
-              buttonVariants({ size: "lg" }),
-              "border-orange-500/20 hover:bg-orange-500/10 rounded-full px-8 py-6 inline-flex items-center group"
-            )}
+            aria-label="E-mail"
+            class="link-orange inline-flex items-center gap-2 text-sm text-muted"
           >
-            <span>Me contacter</span>
-            <Mail
-              className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
-            />
-          </a>
-
-          <a
-            href="#projects"
-            aria-label="Mes projets"
-            class={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "border-orange-500/20 hover:bg-orange-500/10 hover:text-orange-500 rounded-full px-8 py-6"
-            )}
-          >
-            Voir mes projets
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3 7 9 6 9-6" />
+            </svg>
+            E-mail
           </a>
         </div>
+      </article>
 
-        <!-- Social Links -->
-        <div class="flex flex-col items-center gap-6 reveal reveal-delay-4">
-          <div class="flex items-center gap-2 text-sm text-foreground/60">
-            <div class="w-8 h-[1px] bg-orange-500/30"></div>
-            <span>Sur le web</span>
-            <div class="w-8 h-[1px] bg-orange-500/30"></div>
+      <aside class="reveal self-start lg:max-w-none" style="--stagger:1;">
+        <div class="ink-block mx-auto max-w-[640px] rounded-[1.8rem] p-4 md:p-5 lg:max-w-none">
+          <div class="relative overflow-hidden rounded-[1.2rem] border border-white/12">
+          <Image
+            src={profile.image}
+            alt={profile.name}
+            width={920}
+            height={980}
+            class="h-[360px] w-full object-cover object-[center_20%] sm:h-[420px] md:h-[500px] lg:h-[520px]"
+          />
+
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/82 to-transparent px-5 pb-5 pt-16 on-ink">
+            <p class="on-ink-muted text-[11px] uppercase tracking-[0.18em]">Profil</p>
+            <p class="mt-1 text-[1.9rem] tracking-tight">{profile.name}</p>
+          </div>
           </div>
 
-          <div class="flex items-center gap-6">
+          <div class="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[1rem] border border-[color:var(--ink-panel-border)] bg-[color:var(--ink-panel-glass)] p-3.5">
+            <div class="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.12em]">
+              <span class="ink-chip rounded-full px-2.5 py-1">{profile.location}</span>
+            </div>
             <a
-              href="https://github.com/Boris-Picard"
-              class="group flex items-center justify-center w-12 h-12 rounded-full bg-orange-500/5 hover:bg-orange-500/10 transition-all duration-300"
-              aria-label="GitHub Profile"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={profile.cv}
+              download
+              class="btn-ink inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition duration-200 hover:-translate-y-[1px] active:scale-[0.98] md:px-5"
             >
-              <Github
-                className="w-5 h-5 text-foreground/60 group-hover:text-orange-500 transition-colors"
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/boris-picard-2906029b/"
-              class="group flex items-center justify-center w-12 h-12 rounded-full bg-orange-500/5 hover:bg-orange-500/10 transition-all duration-300"
-              aria-label="LinkedIn Profile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin
-                className="w-5 h-5 text-foreground/60 group-hover:text-orange-500 transition-colors"
-              />
+              Télécharger le CV
             </a>
           </div>
         </div>
-      </div>
+      </aside>
     </div>
   </div>
 </section>

@@ -19,12 +19,11 @@ const {
 ---
 
 <!doctype html>
-<html lang="fr" class="dark">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content={process.env.META_CONTENT} />
-    <!-- SEO (title, meta, OG, Twitter) -->
     <SEO
       title={title}
       description={description}
@@ -41,23 +40,42 @@ const {
       }}
     />
 
-    <!-- Manual link tags -->
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
     />
-    <!-- Base favicons -->
+
+    <script is:inline>
+      (() => {
+        try {
+          const fromStorage = localStorage.getItem("theme");
+          const prefersDark =
+            window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+          const theme =
+            fromStorage === "light" || fromStorage === "dark"
+              ? fromStorage
+              : prefersDark
+                ? "dark"
+                : "light";
+
+          document.documentElement.classList.remove("light", "dark");
+          document.documentElement.classList.add(theme);
+          document.documentElement.dataset.theme = theme;
+        } catch {
+          document.documentElement.classList.add("light");
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
-
-    <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-    <!-- Android / Chrome -->
     <link
       rel="icon"
       type="image/png"
@@ -70,13 +88,11 @@ const {
       sizes="512x512"
       href="/android-chrome-512x512.png"
     />
-
-    <!-- Web Manifest -->
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#FC702D" />
+
+    <meta name="theme-color" content="#ff5a2b" />
     <meta name="mobile-web-app-capable" content="yes" />
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -88,7 +104,7 @@ const {
         "email": "picard.boris@outlook.fr",
         "sameAs": [
           "https://github.com/Boris-Picard",
-          "https://www.linkedin.com/in/boris-picard-2906029b/"
+          "https://www.linkedin.com/in/boris-picard"
         ],
         "knowsAbout": ["Symfony", "React", "Docker", "CI/CD", "PostgreSQL"],
         "address": {
@@ -101,36 +117,11 @@ const {
     <Analytics />
   </head>
   <body class="bg-background text-foreground antialiased">
-    <slot />
-
-    <!-- Theme JS -->
-    <script>
-      function initTheme() {
-        const theme = localStorage.getItem("theme") || "dark";
-        document.documentElement.classList.toggle("dark", theme === "dark");
-        document.documentElement.classList.toggle("light", theme === "light");
-      }
-
-      initTheme();
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const themeToggle = document.getElementById("theme-toggle");
-        if (themeToggle) {
-          themeToggle.addEventListener("click", () => {
-            const isDark = document.documentElement.classList.contains("dark");
-            const newTheme = isDark ? "light" : "dark";
-
-            document.documentElement.classList.remove("dark", "light");
-            document.documentElement.classList.add(newTheme);
-            localStorage.setItem("theme", newTheme);
-
-            themeToggle.setAttribute("data-theme", newTheme);
-          });
-
-          const currentTheme = localStorage.getItem("theme") || "dark";
-          themeToggle.setAttribute("data-theme", currentTheme);
-        }
-      });
-    </script>
+    <div class="site-shell">
+      <div class="atmo-layer atmo-a" aria-hidden="true"></div>
+      <div class="atmo-layer atmo-b" aria-hidden="true"></div>
+      <div class="noise-layer" aria-hidden="true"></div>
+      <slot />
+    </div>
   </body>
 </html>

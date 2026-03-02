@@ -1,50 +1,68 @@
 ---
-import { skillColumns } from '../data/skills';
+import { skillColumns } from "@/data/skills";
+import { normalizeTone } from "@/lib/color";
+
+const descriptions: Record<string, string> = {
+  "Front-end & Interface": "Interface, expérience utilisateur et intégration front.",
+  "Back-end & API": "API, logique métier, sécurité et architecture serveur.",
+  "Données & DevOps": "Données, automatisation, déploiement et qualité continue.",
+};
+
 ---
 
-<section id="skills" class="py-32 relative overflow-hidden section-alt">
-  <!-- Background -->
-  <div class="absolute inset-0 bg-gradient-to-tl from-orange-500/6 via-transparent to-amber-500/4"></div>
-  <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/3 via-transparent to-orange-500/5"></div>
-  <div class="absolute top-1/4 right-1/3 w-96 h-96 rounded-full bg-gradient-to-br from-orange-500/10 to-amber-500/6 blur-3xl"></div>
-
-  <div class="max-w-7xl mx-auto px-4 relative z-10">
-    <!-- Header -->
-    <div class="text-center mb-20 reveal">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Compétences & Expertise</h2>
-      <div class="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-600 rounded-full mx-auto mb-8"></div>
-      <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-        Technologies et outils que j’utilise pour donner vie à mes projets web
+<section id="skills" class="section-block">
+  <div class="section-wrap">
+    <header class="section-head reveal" style="--stagger:0;">
+      <p class="eyebrow">Compétences</p>
+      <h2 class="display-section max-w-[9ch]">Compétences techniques</h2>
+      <p class="copy max-w-[62ch]">
+        Front-end, back-end, données et DevOps. Outils utilisés quotidiennement sur des projets réels.
       </p>
-    </div>
+    </header>
 
-    <div class="grid md:grid-cols-3 gap-8 lg:gap-12 reveal reveal-delay-1">
-      {skillColumns.map((column, columnIdx) => (
-        <div class="space-y-6">
-          <!-- Titre de colonne -->
-          <div class="text-center">
-            <h3 class="text-lg font-semibold text-muted-foreground mb-6">
-              {column.title}
-            </h3>
-          </div>
-          
-          <div class="space-y-4">
-            {column.skills.map((skill, skillIdx) => (
-              <div class="group flex items-center gap-4 p-3 rounded-xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 hover:bg-white dark:hover:bg-gray-800 hover:shadow-lg hover:border-orange-200 dark:hover:border-orange-800 transition-all duration-300 hover:scale-105">
-                <div 
-                  class="w-12 h-12 rounded-xl flex items-center justify-center text-white text-sm font-bold shadow-md transition-transform group-hover:scale-110"
-                  style={`background-color: ${skill.color}`}
+    {
+      skillColumns.length > 0 ? (
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-7">
+          {
+            skillColumns.map((column, idx) => {
+              const isWide = idx === 0 || idx === 2;
+              return (
+                <article
+                  class={`reveal rounded-[1.55rem] border border-[color:var(--surface-border)] bg-[color:var(--surface)] p-5 md:p-6 ${
+                    isWide ? "md:col-span-7" : "md:col-span-5"
+                  }`}
+                  style={`--stagger:${idx + 1};`}
                 >
-                  {skill.icon}
-                </div>
-                <span class="font-medium text-gray-900 dark:text-gray-100 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
-                  {skill.name}
-                </span>
-              </div>
-            ))}
-          </div>
+                  <p class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">Pôle {String(idx + 1).padStart(2, "0")}</p>
+                  <h3 class="mt-2 text-2xl tracking-tight md:text-4xl">{column.title}</h3>
+                  <p class="mt-3 max-w-[52ch] text-sm leading-relaxed text-muted">
+                    {descriptions[column.title] ?? "Compétences utilisées en contexte produit."}
+                  </p>
+
+                  <ul class="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                    {
+                      column.skills.map((skill) => {
+                        const tone = normalizeTone(skill.color);
+                        return (
+                          <li class="inline-flex items-center gap-2 rounded-full border border-[color:var(--surface-border)] px-3 py-1.5 text-sm">
+                            <span class="h-2 w-2 rounded-full" style={`background-color:${tone};`} aria-hidden="true"></span>
+                            <span>{skill.name}</span>
+                          </li>
+                        );
+                      })
+                    }
+                  </ul>
+                </article>
+              );
+            })
+          }
         </div>
-      ))}
-    </div>
+      ) : (
+        <article class="reveal" style="--stagger:1;">
+          <div class="rule"></div>
+          <p class="mt-5 text-sm text-muted">Aucune compétence renseignée pour le moment.</p>
+        </article>
+      )
+    }
   </div>
 </section>

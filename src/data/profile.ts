@@ -56,7 +56,7 @@ export interface Profile {
 
 export const profile: Profile = {
     name: "Boris Picard",
-    role: "Développeur Full Stack",
+    role: "Développeur full stack",
     location: "Strasbourg, France",
     available: false,
     image: pp,
@@ -65,7 +65,7 @@ export const profile: Profile = {
 
 export const education: EducationItem[] = [
         {
-        degree: "Master of Science - spé IA & Bigdata (Niveau 7)",
+        degree: "Master of Science – spécialisation IA & Big Data (Niveau 7)",
         period: "oct. 2025 – en cours",
         institution: [
             {
@@ -90,7 +90,7 @@ export const education: EducationItem[] = [
     },
     {
         degree: "Développeur Web et Web Mobile (Niveau 5)",
-        period: "Sept. 2023 - Mars 2024",
+        period: "Sept. 2023 – Mars 2024",
         institution: [
             {
                 name: "LA MANU",
@@ -117,7 +117,7 @@ export const experiences: ExperienceItem[] = [
         }],
         period: "Sept. 2024 – Présent",
         description:
-            "Participation au développement d’applications web sur mesure dans un environnement full stack. Intégration front-end avec Drupal, Twig, SCSS et JavaScript. Développement back-end avec PHP et Symfony, gestion des entités, création de modules personnalisés, et respect des bonnes pratiques. Travail en équipe Agile avec utilisation de Docker pour l’environnement local et Jenkins pour l’automatisation CI/CD.",
+            "Participation au développement d’applications web sur mesure dans un environnement full stack, dont des sites institutionnels destinés à des acteurs publics. Intégration front-end avec Twig, SCSS et JavaScript. Développement back-end avec Drupal, PHP et Symfony, gestion des entités, création de modules personnalisés, et respect des bonnes pratiques. Travail en équipe Agile avec utilisation de Docker pour l’environnement local et Jenkins pour l’automatisation CI/CD.",
 
         highlights: [
             { name: "Drupal", color: "#0678BE" },

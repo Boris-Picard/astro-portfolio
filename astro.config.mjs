@@ -15,6 +15,9 @@ export default defineConfig({
         "@": path.resolve("./src")
       }
     },
+    optimizeDeps: {
+      exclude: ["react-photo-view"]
+    },
     plugins: [tailwindcss()]
   },
   site: "https://www.boris-picard.com/",
