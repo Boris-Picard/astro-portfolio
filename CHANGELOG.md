@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v2.0.1...astro-portfolio-v2.0.2) (2026-03-02)
+
+
+### Bug Fixes
+
+* seo & responsive ([c42b663](https://github.com/Boris-Picard/astro-portfolio/commit/c42b66381e47ab65f6ad8409189744a2e2af45ad))
+
 ## [2.0.1](https://github.com/Boris-Picard/astro-portfolio/compare/astro-portfolio-v2.0.0...astro-portfolio-v2.0.1) (2026-03-02)
 
 
