@@ -1,0 +1,60 @@
+---
+import { getImage } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import ProjectSliderReact from "@/components/ui/ProjectSlider";
+
+interface Props {
+  images: ImageMetadata[];
+  priority?: boolean;
+}
+
+const MAX_VISIBLE_THUMBS = 6;
+
+const { images = [], priority = false } = Astro.props;
+const hasImages = images.length > 0;
+
+const displayImages = hasImages
+  ? await Promise.all(
+      images.map((image) =>
+        getImage({
+          src: image,
+          width: 1280,
+          format: "webp",
+          quality: 74,
+        }),
+      ),
+    )
+  : [];
+
+const thumbImages = hasImages
+  ? await Promise.all(
+      images.map((image) =>
+        getImage({
+          src: image,
+          width: 184,
+          format: "webp",
+          quality: 66,
+        }),
+      ),
+    )
+  : [];
+
+const displayUrls = displayImages.map((image) => image.src);
+const thumbUrls = thumbImages.map((image) => image.src);
+---
+
+{
+  !hasImages ? (
+    <div class="surface rounded-2xl border-dashed p-6 text-sm text-muted">
+      Aucun visuel disponible pour ce projet.
+    </div>
+  ) : (
+    <ProjectSliderReact
+      client:visible
+      displayImages={displayUrls}
+      thumbImages={thumbUrls}
+      maxVisibleThumbs={MAX_VISIBLE_THUMBS}
+      priority={priority}
+    />
+  )
+}

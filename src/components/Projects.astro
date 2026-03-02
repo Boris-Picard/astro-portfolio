@@ -1,6 +1,6 @@
 ---
 import { projects } from "@/data/projects";
-import ProjectSlider from "@/components/ui/ProjectSlider";
+import ProjectSlider from "@/components/ui/ProjectSlider.astro";
 
 const projectTypeLabel: Record<string, string> = {
   Study: "Étude",
@@ -88,7 +88,10 @@ const projectTypeLabel: Record<string, string> = {
 
                     <div class={reverse ? "lg:order-1" : ""}>
                       <div class="surface-strong rounded-[1.35rem] p-3">
-                        <ProjectSlider client:visible images={project.gallery.length ? project.gallery : [project.image]} />
+                        <ProjectSlider
+                          images={project.gallery.length ? project.gallery : [project.image]}
+                          priority={index === 0}
+                        />
                       </div>
                     </div>
                   </div>

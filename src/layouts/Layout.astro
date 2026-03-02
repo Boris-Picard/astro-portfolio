@@ -1,5 +1,6 @@
 ---
 import Analytics from "@/components/Analytics.astro";
+import { projects } from "@/data/projects";
 import "../styles/global.css";
 import { SEO } from "astro-seo";
 
@@ -13,9 +14,92 @@ export interface Props {
 const {
   title,
   description = "Boris Picard – Portfolio Développeur web full-stack passionné par la création de solutions web performantes et évolutives, avec une expertise en Symfony, React, Docker, CI/CD et PostgreSQL.",
-  image = "https://boris-picard.com/assets/boris-picard.jpg",
-  url = "https://boris-picard.com",
+  image = "/og/boris-picard.jpg",
+  url = "https://www.boris-picard.com/",
 } = Astro.props;
+
+const siteUrl = "https://www.boris-picard.com";
+const canonicalUrl = new URL(url, siteUrl).toString();
+const imageUrl = new URL(image, siteUrl).toString();
+
+const personEntityId = `${siteUrl}/#person`;
+const websiteEntityId = `${siteUrl}/#website`;
+const profilePageEntityId = `${canonicalUrl}#profilepage`;
+
+const projectEntities = projects.map((project, index) => {
+  const liveUrl = project.site.find(({ link }) => Boolean(link))?.link;
+  const repositoryUrl = project.github.find(({ link }) => Boolean(link))?.link;
+  const projectUrl = liveUrl || repositoryUrl || canonicalUrl;
+
+  return {
+    "@type": "SoftwareSourceCode",
+    "@id": `${canonicalUrl}#project-${index + 1}`,
+    "name": project.title,
+    "description": project.description,
+    "url": projectUrl,
+    "author": {
+      "@id": personEntityId,
+    },
+    "programmingLanguage": project.techs,
+    "keywords": project.techs.join(", "),
+    ...(repositoryUrl ? { "codeRepository": repositoryUrl } : {}),
+  };
+});
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": websiteEntityId,
+      "url": siteUrl,
+      "name": "Boris Picard - Portfolio",
+      "inLanguage": "fr-FR",
+      "publisher": {
+        "@id": personEntityId,
+      },
+    },
+    {
+      "@type": "Person",
+      "@id": personEntityId,
+      "name": "Boris Picard",
+      "jobTitle": "Developpeur full-stack",
+      "description": description,
+      "image": imageUrl,
+      "url": canonicalUrl,
+      "email": "picard.boris@outlook.fr",
+      "sameAs": [
+        "https://github.com/Boris-Picard",
+        "https://www.linkedin.com/in/boris-picard",
+      ],
+      "knowsAbout": ["Symfony", "React", "Docker", "CI/CD", "PostgreSQL", "TypeScript"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Strasbourg",
+        "addressCountry": "FR",
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Actimage",
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": profilePageEntityId,
+      "url": canonicalUrl,
+      "name": title,
+      "inLanguage": "fr-FR",
+      "isPartOf": {
+        "@id": websiteEntityId,
+      },
+      "mainEntity": {
+        "@id": personEntityId,
+      },
+      "hasPart": projectEntities.map((project) => ({ "@id": project["@id"] })),
+    },
+    ...projectEntities,
+  ],
+};
 ---
 
 <!doctype html>
@@ -27,27 +111,52 @@ const {
     <SEO
       title={title}
       description={description}
+      canonical={canonicalUrl}
+      languageAlternates={[
+        { href: canonicalUrl, hrefLang: "fr-FR" },
+        { href: canonicalUrl, hrefLang: "x-default" },
+      ]}
       openGraph={{
         basic: {
           title: title,
           type: "website",
-          url: url,
-          image: image,
+          url: canonicalUrl,
+          image: imageUrl,
         },
         optional: {
           description: description,
+          locale: "fr_FR",
+          siteName: "Boris Picard - Portfolio",
         },
+        image: {
+          type: "image/jpeg",
+          width: 674,
+          height: 674,
+          alt: "Portrait de Boris Picard",
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title: title,
+        description: description,
+        image: imageUrl,
+        imageAlt: "Portrait de Boris Picard",
+      }}
+      extend={{
+        link: [
+          { rel: "me", href: "https://github.com/Boris-Picard" },
+          { rel: "me", href: "https://www.linkedin.com/in/boris-picard" },
+        ],
+        meta: [
+          { name: "author", content: "Boris Picard" },
+          { name: "googlebot", content: "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" },
+          { name: "bingbot", content: "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" },
+        ],
       }}
     />
 
     <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
-    />
-
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
     <script is:inline>
       (() => {
         try {
@@ -93,27 +202,7 @@ const {
     <meta name="theme-color" content="#ff5a2b" />
     <meta name="mobile-web-app-capable" content="yes" />
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Boris Picard",
-        "jobTitle": "Développeur full-stack",
-        "image": "https://boris-picard.com/assets/boris-picard.jpg",
-        "url": "https://boris-picard.com",
-        "email": "picard.boris@outlook.fr",
-        "sameAs": [
-          "https://github.com/Boris-Picard",
-          "https://www.linkedin.com/in/boris-picard"
-        ],
-        "knowsAbout": ["Symfony", "React", "Docker", "CI/CD", "PostgreSQL"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Strasbourg",
-          "addressCountry": "FR"
-        }
-      }
-    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <Analytics />
   </head>
   <body class="bg-background text-foreground antialiased">

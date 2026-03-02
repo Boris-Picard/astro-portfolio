@@ -92,8 +92,11 @@ import { profile } from "@/data/profile";
           <Image
             src={profile.image}
             alt={profile.name}
-            width={920}
-            height={980}
+            widths={[360, 480, 640, 780, 920]}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 56vw, 42vw"
+            loading="eager"
+            fetchpriority="high"
+            quality={80}
             class="h-[360px] w-full object-cover object-[center_20%] sm:h-[420px] md:h-[500px] lg:h-[520px]"
           />
 

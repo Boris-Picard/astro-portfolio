@@ -81,7 +81,15 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Outfit", system-ui, sans-serif;
+    font-family:
+      "Avenir Next",
+      "Avenir",
+      "Segoe UI",
+      "SF Pro Text",
+      "Helvetica Neue",
+      system-ui,
+      -apple-system,
+      sans-serif;
     color: var(--ink);
     min-height: 100dvh;
     overflow-x: clip;
@@ -90,7 +98,15 @@
   code,
   pre,
   .font-mono {
-    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-family:
+      "IBM Plex Mono",
+      "SF Mono",
+      "Cascadia Mono",
+      "JetBrains Mono",
+      ui-monospace,
+      SFMono-Regular,
+      Menlo,
+      monospace;
   }
 
   :focus-visible {
@@ -356,6 +372,57 @@
 
 .link-orange:active {
   transform: scale(0.98);
+}
+
+/* react-photo-view: keep arrows inside the displayed image area */
+.PhotoView-Portal .PhotoView-Slider__ArrowLeft,
+.PhotoView-Portal .PhotoView-Slider__ArrowRight {
+  width: 52px !important;
+  height: 52px !important;
+  top: 50% !important;
+  bottom: auto !important;
+  transform: translateY(-50%);
+  opacity: 0.92;
+}
+
+.PhotoView-Portal .PhotoView-Slider__ArrowLeft {
+  left: clamp(10px, calc((100vw - min(92vw, 1280px)) / 2 + 12px), 104px) !important;
+}
+
+.PhotoView-Portal .PhotoView-Slider__ArrowRight {
+  right: clamp(10px, calc((100vw - min(92vw, 1280px)) / 2 + 12px), 104px) !important;
+}
+
+.PhotoView-Portal .PhotoView-Slider__ArrowLeft svg,
+.PhotoView-Portal .PhotoView-Slider__ArrowRight svg {
+  width: 20px;
+  height: 20px;
+  padding: 9px;
+  border-radius: 9999px;
+  background: color-mix(in srgb, rgba(8, 10, 16, 0.84) 82%, var(--accent-solid) 18%);
+  border: 1px solid color-mix(in srgb, var(--accent-solid) 34%, rgba(255, 255, 255, 0.34));
+}
+
+.PhotoView-Portal .PhotoView-Slider__ArrowLeft:hover svg,
+.PhotoView-Portal .PhotoView-Slider__ArrowRight:hover svg {
+  background: color-mix(in srgb, rgba(8, 10, 16, 0.86) 68%, var(--accent-solid) 32%);
+  border-color: color-mix(in srgb, var(--accent-solid) 56%, rgba(255, 255, 255, 0.4));
+}
+
+@media (max-width: 768px) {
+  .PhotoView-Portal .PhotoView-Slider__ArrowLeft,
+  .PhotoView-Portal .PhotoView-Slider__ArrowRight {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .PhotoView-Portal .PhotoView-Slider__ArrowLeft {
+    left: 8px !important;
+  }
+
+  .PhotoView-Portal .PhotoView-Slider__ArrowRight {
+    right: 8px !important;
+  }
 }
 
 .nav-shell {
